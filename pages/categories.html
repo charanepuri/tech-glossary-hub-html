@@ -12,15 +12,20 @@
 
     <meta
         name="description"
-        content="Explore technology terms, definitions, syntax, and examples with Tech Glossary Hub."
+        content="Explore technology categories including Web Development, Software Engineering, Data Science & AI, Cybersecurity, and Cloud & Networking."
+    >
+
+    <meta
+        name="author"
+        content="Charan Teja Epuri"
     >
 
     <title>
-        Glossary | Tech Glossary Hub
+        Categories | Tech Glossary Hub
     </title>
 
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -60,6 +65,8 @@
         <div class="container">
 
 
+            <!-- Brand -->
+
             <a
                 class="navbar-brand brand"
                 href="../index.html"
@@ -81,11 +88,16 @@
             </a>
 
 
+            <!-- Mobile Toggle -->
+
             <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
             >
 
                 <span class="navbar-toggler-icon"></span>
@@ -93,13 +105,17 @@
             </button>
 
 
+            <!-- Navigation -->
+
             <div
                 class="collapse navbar-collapse"
                 id="mainNavigation"
             >
 
 
-                <ul class="navbar-nav ms-auto align-items-lg-center">
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center"
+                >
 
 
                     <li class="nav-item">
@@ -117,8 +133,8 @@
                     <li class="nav-item">
 
                         <a
-                            class="nav-link"
-                            href="../categories.html"
+                            class="nav-link active"
+                            href="categories.html"
                         >
                             Categories
                         </a>
@@ -129,7 +145,7 @@
                     <li class="nav-item">
 
                         <a
-                            class="nav-link active"
+                            class="nav-link"
                             href="glossary.html"
                         >
                             Glossary
@@ -153,11 +169,14 @@
                 </ul>
 
 
+                <!-- Theme Toggle -->
+
                 <button
                     class="theme-toggle"
                     id="themeToggle"
                     type="button"
                     aria-label="Toggle theme"
+                    title="Toggle theme"
                 >
 
                     <i class="bi bi-moon-fill"></i>
@@ -173,10 +192,10 @@
 
 
     <!-- =====================================
-         Header
+         Categories Header
     ====================================== -->
 
-    <header class="glossary-header">
+    <header class="categories-page-header">
 
 
         <div class="container">
@@ -185,26 +204,26 @@
             <div class="text-center">
 
 
-                <span class="glossary-badge">
+                <span class="categories-badge">
 
-                    <i class="bi bi-journal-code"></i>
+                    <i class="bi bi-grid-3x3-gap"></i>
 
-                    TECH GLOSSARY
+                    EXPLORE TECHNOLOGY
 
                 </span>
 
 
                 <h1>
 
-                    Explore Technology Terms
+                    Technology Categories
 
                 </h1>
 
 
                 <p>
 
-                    Browse technology concepts with simple
-                    definitions, syntax, and practical examples.
+                    Explore carefully organized technology concepts
+                    across five major domains.
 
                 </p>
 
@@ -217,124 +236,38 @@
 
 
     <!-- =====================================
-         Glossary
+         Categories Content
     ====================================== -->
 
-    <main class="glossary-page">
+    <main class="categories-page">
 
 
         <div class="container">
 
 
-            <!-- Toolbar -->
-
-            <div class="glossary-toolbar">
-
-
-                <div class="glossary-search">
-
-
-                    <div class="input-group">
-
-
-                        <span class="input-group-text">
-
-                            <i class="bi bi-search"></i>
-
-                        </span>
-
-
-                        <input
-                            type="search"
-                            id="glossarySearch"
-                            class="form-control"
-                            placeholder="Search terms..."
-                            aria-label="Search glossary terms"
-                        >
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="glossary-count">
-
-
-                    <strong id="glossaryCount">
-                        0
-                    </strong>
-
-
-                    <span>
-                        Terms
-                    </span>
-
-
-                </div>
-
-
-            </div>
-
-
-            <!-- Filters -->
+            <!-- Category Statistics -->
 
             <div
-                class="glossary-filter"
-                id="glossaryFilter"
+                class="category-page-stats"
+                id="categoryPageStats"
             >
 
-                <!--
-                    Filter buttons are generated
-                    dynamically using JavaScript.
-                -->
+                <!-- Dynamically generated -->
 
             </div>
 
 
-            <!-- Terms -->
+            <!-- Categories -->
 
             <div
                 class="row g-4"
-                id="glossaryContainer"
+                id="categoriesPageContainer"
             >
 
                 <!--
-                    Terms generated dynamically.
+                    Categories are generated
+                    dynamically by categories.js.
                 -->
-
-            </div>
-
-
-            <!-- Empty State -->
-
-            <div
-                class="glossary-empty"
-                id="glossaryEmpty"
-                hidden
-            >
-
-
-                <div class="empty-icon">
-
-                    <i class="bi bi-search"></i>
-
-                </div>
-
-
-                <h3>
-
-                    No Terms Found
-
-                </h3>
-
-
-                <p>
-
-                    Try searching with another keyword.
-
-                </p>
-
 
             </div>
 
@@ -356,6 +289,8 @@
 
             <div class="row g-4">
 
+
+                <!-- About -->
 
                 <div class="col-lg-5">
 
@@ -384,6 +319,8 @@
                 </div>
 
 
+                <!-- Quick Links -->
+
                 <div class="col-sm-6 col-lg-3">
 
 
@@ -397,7 +334,9 @@
 
                         <li>
 
-                            <a href="../index.html">
+                            <a
+                                href="../index.html"
+                            >
                                 Home
                             </a>
 
@@ -406,7 +345,9 @@
 
                         <li>
 
-                            <a href="../index.html#categories">
+                            <a
+                                href="categories.html"
+                            >
                                 Categories
                             </a>
 
@@ -415,7 +356,9 @@
 
                         <li>
 
-                            <a href="glossary.html">
+                            <a
+                                href="glossary.html"
+                            >
                                 Glossary
                             </a>
 
@@ -424,7 +367,9 @@
 
                         <li>
 
-                            <a href="../index.html#about">
+                            <a
+                                href="../index.html#about"
+                            >
                                 About
                             </a>
 
@@ -433,9 +378,10 @@
 
                     </ul>
 
-
                 </div>
 
+
+                <!-- Technologies -->
 
                 <div class="col-sm-6 col-lg-4">
 
@@ -501,26 +447,34 @@
     </footer>
 
 
-    <!-- Bootstrap JS -->
+    <!-- =====================================
+         Bootstrap JavaScript
+    ====================================== -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 
 
-    <!-- Data -->
+    <!-- Glossary Data -->
 
-    <script src="../data/glossary-data.js"></script>
-
-
-    <!-- Main JS -->
-
-    <script src="../js/app.js"></script>
+    <script
+        src="../data/glossary-data.js"
+    ></script>
 
 
-    <!-- Glossary JS -->
+    <!-- Main Application -->
 
-    <script src="../js/glossary.js"></script>
+    <script
+        src="../js/app.js"
+    ></script>
+
+
+    <!-- Categories -->
+
+    <script
+        src="../js/categories.js"
+    ></script>
 
 
 </body>
