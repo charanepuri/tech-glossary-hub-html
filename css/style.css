@@ -38,6 +38,89 @@
 
 }
 
+/* =========================================
+   Theme Variables
+========================================= */
+
+:root {
+
+    /* Spider-Man Dark Theme */
+
+    --bg-primary: #080b10;
+
+    --bg-secondary: #0d1117;
+
+    --bg-tertiary: #111722;
+
+    --bg-code: #05070a;
+
+    --border-color: #202938;
+
+    --border-hover: #334155;
+
+    --text-primary: #ffffff;
+
+    --text-secondary: #a4afbf;
+
+    --text-muted: #8491a5;
+
+    --primary-color: #e10600;
+
+    --primary-hover: #ff1711;
+
+    --accent-color: #3399ff;
+
+    --accent-dark: #0066cc;
+
+    --shadow-color:
+        rgba(0, 0, 0, 0.25);
+
+    --primary-shadow:
+        rgba(225, 6, 0, 0.2);
+
+    --transition-speed: 0.3s;
+
+}
+
+/* =========================================
+   Light Theme
+========================================= */
+
+body[data-theme="light"] {
+
+    --bg-primary: #f4f7fb;
+
+    --bg-secondary: #ffffff;
+
+    --bg-tertiary: #eef2f7;
+
+    --bg-code: #f1f5f9;
+
+    --border-color: #dbe2ea;
+
+    --border-hover: #b8c4d1;
+
+    --text-primary: #111827;
+
+    --text-secondary: #475569;
+
+    --text-muted: #64748b;
+
+    --primary-color: #d90400;
+
+    --primary-hover: #b80300;
+
+    --accent-color: #0066cc;
+
+    --accent-dark: #0052a3;
+
+    --shadow-color:
+        rgba(15, 23, 42, 0.1);
+
+    --primary-shadow:
+        rgba(217, 4, 0, 0.15);
+
+}
 
 /* =========================================
    Global
@@ -51,21 +134,28 @@ body {
 
     margin: 0;
 
+    background:
+        var(--bg-primary);
+
+    color:
+        var(--text-primary);
+
     font-family:
-        Inter,
+        "Inter",
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
 
-    color: var(--text-color);
-
-    background: var(--body-bg);
-
     transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
+        background-color
+            var(--transition-speed)
+            ease,
+
+        color
+            var(--transition-speed)
+            ease;
 
 }
 
@@ -104,11 +194,13 @@ button {
 
     gap: 0.65rem;
 
-    color: #ffffff !important;
+    /* color: #ffffff !important; */
+
+    color: var(--text-primary) !important;
 
     font-size: 1.2rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
 }
 
@@ -130,6 +222,561 @@ button {
 
 }
 
+.brand:hover {
+
+    color:
+        var(--text-primary) !important;
+
+}
+
+
+.brand-text {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.nav-link {
+
+    color:
+        var(--text-muted) !important;
+
+    transition:
+        color
+        var(--transition-speed)
+        ease;
+
+}
+
+
+.nav-link:hover {
+
+    color:
+        var(--text-primary) !important;
+
+}
+
+
+.nav-link.active {
+
+    color:
+        var(--primary-color) !important;
+
+}
+
+/* =========================================
+   Theme Toggle
+========================================= */
+
+.theme-toggle {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 1rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 50%;
+
+    background:
+        var(--bg-tertiary);
+
+    color:
+        var(--text-primary);
+
+    cursor: pointer;
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease,
+
+        border-color
+            var(--transition-speed)
+            ease,
+
+        color
+            var(--transition-speed)
+            ease,
+
+        transform
+            var(--transition-speed)
+            ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    border-color:
+        var(--primary-color);
+
+    color:
+        var(--primary-color);
+
+    transform:
+        rotate(15deg);
+
+}
+
+.category-card {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+    color:
+        var(--text-primary);
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease,
+
+        border-color
+            var(--transition-speed)
+            ease,
+
+        transform
+            var(--transition-speed)
+            ease,
+
+        box-shadow
+            var(--transition-speed)
+            ease;
+
+}
+
+.category-card h3 {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.category-card p {
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.category-footer {
+
+    color:
+        var(--text-muted);
+
+}
+
+.term-preview-card {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease,
+
+        border-color
+            var(--transition-speed)
+            ease,
+
+        transform
+            var(--transition-speed)
+            ease;
+
+}
+
+
+.term-preview-card h3 {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.term-preview-card p {
+
+    color:
+        var(--text-secondary);
+
+}
+
+.glossary-page {
+
+    background:
+        var(--bg-primary);
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease;
+
+}
+
+.glossary-card {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+    color:
+        var(--text-primary);
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease,
+
+        border-color
+            var(--transition-speed)
+            ease,
+
+        transform
+            var(--transition-speed)
+            ease;
+
+}
+
+
+.glossary-card h2 {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.glossary-card p {
+
+    color:
+        var(--text-secondary);
+
+}
+
+.term-syntax {
+
+    background:
+        var(--bg-code);
+
+    border:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.term-syntax code {
+
+    color:
+        var(--text-secondary);
+
+}
+
+.glossary-search .input-group {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.glossary-search .input-group-text {
+
+    background:
+        var(--bg-secondary);
+
+    border: 0;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.glossary-search .form-control {
+
+    background:
+        var(--bg-secondary);
+
+    border: 0;
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.glossary-search .form-control::placeholder {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.glossary-search .form-control:focus {
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-primary);
+
+}
+
+.filter-btn {
+
+    border:
+        1px solid
+        var(--border-color);
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.filter-btn:hover {
+
+    border-color:
+        var(--primary-color);
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.filter-btn.active {
+
+    border-color:
+        var(--primary-color);
+
+    background:
+        var(--primary-color);
+
+    color:
+        #ffffff;
+
+}
+
+.term-details-card {
+
+    background:
+        var(--bg-secondary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.term-details-heading h1 {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.term-details-category {
+
+    color:
+        var(--accent-color);
+
+}
+
+
+.term-definition {
+
+    color:
+        var(--text-secondary);
+
+}
+
+.term-code-block {
+
+    background:
+        var(--bg-code);
+
+    border:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.code-header {
+
+    background:
+        var(--bg-tertiary);
+
+    border-bottom:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.code-header span {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.term-code-block code {
+
+    color:
+        var(--text-secondary);
+
+}
+
+.term-nav-button {
+
+    background:
+        var(--bg-tertiary);
+
+    border:
+        1px solid
+        var(--border-color);
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.term-nav-button:hover {
+
+    border-color:
+        var(--primary-color);
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-primary);
+
+}
+
+.site-footer {
+
+    background:
+        var(--bg-secondary);
+
+    border-top:
+        1px solid
+        var(--border-color);
+
+    transition:
+        background-color
+            var(--transition-speed)
+            ease;
+
+}
+
+
+.footer-description {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.site-footer h5 {
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.footer-links a {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.footer-links a:hover {
+
+    color:
+        var(--primary-color);
+
+}
+
+
+.footer-bottom {
+
+    color:
+        var(--text-muted);
+
+}
+
+/* =========================================
+   Theme Transition
+========================================= */
+
+body,
+.site-navbar,
+.category-card,
+.term-preview-card,
+.glossary-card,
+.term-details-card,
+.term-code-block,
+.term-not-found,
+.term-nav-button,
+.glossary-search .input-group,
+.glossary-search .form-control,
+.filter-btn,
+.site-footer {
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
 
 /* Navigation */
 

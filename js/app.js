@@ -16,7 +16,7 @@ document.addEventListener(
 
         initializeHomePage();
 
-        initializeSearch();
+        initializeHomeSearch();
 
     }
 );
@@ -31,10 +31,6 @@ function initializeHomePage() {
     if (
         typeof glossaryData === "undefined"
     ) {
-
-        console.error(
-            "glossaryData is not available."
-        );
 
         return;
 
@@ -70,7 +66,8 @@ function updateStatistics() {
 
     if (
         !totalTermsElement ||
-        !totalCategoriesElement
+        !totalCategoriesElement ||
+        typeof glossaryData === "undefined"
     ) {
 
         return;
@@ -83,7 +80,7 @@ function updateStatistics() {
 
 
     totalTermsElement.textContent =
-        glossaryData.length + "+";
+        `${glossaryData.length}+`;
 
 
     totalCategoriesElement.textContent =
@@ -101,7 +98,8 @@ function getCategories() {
     return [
         ...new Set(
             glossaryData.map(
-                (item) => item.category
+                (item) =>
+                    item.category
             )
         )
     ];
@@ -196,14 +194,11 @@ function renderCategories() {
                 (
                     category,
                     index
-                ) => {
-
-                    return createCategoryCard(
+                ) =>
+                    createCategoryCard(
                         category,
                         index
-                    );
-
-                }
+                    )
             )
             .join("");
 
@@ -370,10 +365,14 @@ function renderFeaturedTerms() {
    Create Featured Term Card
 ========================================= */
 
-function createFeaturedTermCard(term) {
+function createFeaturedTermCard(
+    term
+) {
 
     const icon =
-        getTermIcon(term.id);
+        getTermIcon(
+            term.id
+        );
 
 
     return `
@@ -385,7 +384,9 @@ function createFeaturedTermCard(term) {
 
                 <div class="term-icon">
 
-                    <i class="bi ${icon}"></i>
+                    <i
+                        class="bi ${icon}"
+                    ></i>
 
                 </div>
 
@@ -417,7 +418,10 @@ function createFeaturedTermCard(term) {
 
                     View Term
 
-                    <i class="bi bi-arrow-right"></i>
+                    <i
+                        class="bi bi-arrow-right"
+                    ></i>
+
 
                 </a>
 
@@ -435,7 +439,9 @@ function createFeaturedTermCard(term) {
    Term Icons
 ========================================= */
 
-function getTermIcon(termId) {
+function getTermIcon(
+    termId
+) {
 
     const icons = {
 
@@ -478,10 +484,10 @@ function getTermIcon(termId) {
 
 
 /* =========================================
-   Search
+   Home Search
 ========================================= */
 
-function initializeSearch() {
+function initializeHomeSearch() {
 
     const searchInput =
         document.getElementById(
@@ -512,6 +518,8 @@ function initializeSearch() {
 
 
         if (!query) {
+
+            searchInput.focus();
 
             return;
 
@@ -549,7 +557,7 @@ function initializeSearch() {
 
 
 /* =========================================
-   Theme
+   Theme System
 ========================================= */
 
 function initializeTheme() {
@@ -560,12 +568,10 @@ function initializeTheme() {
         );
 
 
-    if (!themeToggle) {
-
-        return;
-
-    }
-
+    /*
+       Read saved theme.
+       Dark is the default.
+    */
 
     const savedTheme =
         localStorage.getItem(
@@ -573,20 +579,49 @@ function initializeTheme() {
         );
 
 
-    if (savedTheme) {
+    const theme =
+        savedTheme === "light"
+            ? "light"
+            : "dark";
 
-        document.body.dataset.theme =
-            savedTheme;
+
+    applyTheme(
+        theme
+    );
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            toggleTheme
+        );
 
     }
 
+}
 
-    updateThemeIcon();
+
+/* =========================================
+   Apply Theme
+========================================= */
+
+function applyTheme(
+    theme
+) {
+
+    document.body.dataset.theme =
+        theme;
 
 
-    themeToggle.addEventListener(
-        "click",
-        toggleTheme
+    localStorage.setItem(
+        "tech-glossary-theme",
+        theme
+    );
+
+
+    updateThemeIcon(
+        theme
     );
 
 }
@@ -609,26 +644,20 @@ function toggleTheme() {
             : "dark";
 
 
-    document.body.dataset.theme =
-        newTheme;
-
-
-    localStorage.setItem(
-        "tech-glossary-theme",
+    applyTheme(
         newTheme
     );
-
-
-    updateThemeIcon();
 
 }
 
 
 /* =========================================
-   Theme Icon
+   Update Theme Icon
 ========================================= */
 
-function updateThemeIcon() {
+function updateThemeIcon(
+    theme
+) {
 
     const themeToggle =
         document.getElementById(
@@ -656,22 +685,41 @@ function updateThemeIcon() {
     }
 
 
-    const currentTheme =
-        document.body.dataset.theme ||
-        "dark";
-
-
     if (
-        currentTheme === "dark"
+        theme === "dark"
     ) {
 
         icon.className =
             "bi bi-moon-fill";
 
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Switch to light theme"
+        );
+
+
+        themeToggle.setAttribute(
+            "title",
+            "Switch to light theme"
+        );
+
     } else {
 
         icon.className =
             "bi bi-sun-fill";
+
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Switch to dark theme"
+        );
+
+
+        themeToggle.setAttribute(
+            "title",
+            "Switch to dark theme"
+        );
 
     }
 
