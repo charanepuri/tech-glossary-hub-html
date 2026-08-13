@@ -4,6 +4,19 @@
 ========================================= */
 
 
+/* =========================================
+   Global State
+========================================= */
+
+let currentCategory = "All";
+
+let currentSearch = "";
+
+
+/* =========================================
+   DOM Ready
+========================================= */
+
 document.addEventListener(
     "DOMContentLoaded",
     () => {
@@ -35,21 +48,37 @@ function initializeGlossaryPage() {
 
     renderFilters();
 
-    renderGlossary(
-        glossaryData
-    );
-
     initializeSearch();
 
     initializeFilters();
 
     initializeURLParameters();
 
+    applyGlossaryFilters();
+
 }
 
 
 /* =========================================
-   Render Category Filters
+   Get Categories
+========================================= */
+
+function getGlossaryCategories() {
+
+    return [
+        ...new Set(
+            glossaryData.map(
+                (term) =>
+                    term.category
+            )
+        )
+    ];
+
+}
+
+
+/* =========================================
+   Render Filters
 ========================================= */
 
 function renderFilters() {
@@ -68,64 +97,62 @@ function renderFilters() {
 
 
     const categories =
-        [
-            ...new Set(
-                glossaryData.map(
-                    (term) =>
-                        term.category
-                )
-            )
-        ];
+        getGlossaryCategories();
 
 
-    const buttons = [
+    const allButton = `
 
-        `
         <button
             class="filter-btn active"
             data-category="All"
             type="button"
         >
+
             All
+
         </button>
-        `,
 
-        ...categories.map(
-            (category) => `
+    `;
 
-                <button
-                    class="filter-btn"
-                    data-category="${category}"
-                    type="button"
-                >
 
-                    ${getShortCategoryName(
-                        category
-                    )}
+    const categoryButtons =
+        categories
+            .map(
+                (category) => `
 
-                </button>
+                    <button
+                        class="filter-btn"
+                        data-category="${category}"
+                        type="button"
+                    >
 
-            `
-        )
+                        ${getShortCategoryName(
+                            category
+                        )}
 
-    ];
+                    </button>
+
+                `
+            )
+            .join("");
 
 
     filterContainer.innerHTML =
-        buttons.join("");
+        allButton +
+        categoryButtons;
 
 }
 
 
 /* =========================================
-   Short Category Name
+   Short Category Names
 ========================================= */
 
 function getShortCategoryName(
     category
 ) {
 
-    const names = {
+    const categoryNames = {
 
         "Web Development & Design":
             "Web Development",
@@ -146,8 +173,197 @@ function getShortCategoryName(
 
 
     return (
-        names[category] ||
+        categoryNames[category] ||
         category
+    );
+
+}
+
+
+/* =========================================
+   Search Initialization
+========================================= */
+
+function initializeSearch() {
+
+    const searchInput =
+        document.getElementById(
+            "glossarySearch"
+        );
+
+
+    if (!searchInput) {
+
+        return;
+
+    }
+
+
+    searchInput.addEventListener(
+        "input",
+        () => {
+
+            currentSearch =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            applyGlossaryFilters();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   Filter Initialization
+========================================= */
+
+function initializeFilters() {
+
+    const filterContainer =
+        document.getElementById(
+            "glossaryFilter"
+        );
+
+
+    if (!filterContainer) {
+
+        return;
+
+    }
+
+
+    filterContainer.addEventListener(
+        "click",
+        (event) => {
+
+
+            const button =
+                event.target.closest(
+                    ".filter-btn"
+                );
+
+
+            if (!button) {
+
+                return;
+
+            }
+
+
+            currentCategory =
+                button.dataset.category;
+
+
+            updateActiveFilter(
+                button
+            );
+
+
+            applyGlossaryFilters();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   Active Filter
+========================================= */
+
+function updateActiveFilter(
+    activeButton
+) {
+
+    const buttons =
+        document.querySelectorAll(
+            ".filter-btn"
+        );
+
+
+    buttons.forEach(
+        (button) => {
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    activeButton.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =========================================
+   Apply Filters
+========================================= */
+
+function applyGlossaryFilters() {
+
+    const filteredTerms =
+        glossaryData.filter(
+            (term) => {
+
+
+                /* =========================
+                   Category
+                ========================== */
+
+                const matchesCategory =
+                    currentCategory === "All" ||
+                    term.category ===
+                        currentCategory;
+
+
+                /* =========================
+                   Search
+                ========================== */
+
+                const searchableText =
+                    [
+
+                        term.term,
+
+                        term.category,
+
+                        term.definition,
+
+                        term.syntax,
+
+                        term.example
+
+                    ]
+                    .join(" ")
+                    .toLowerCase();
+
+
+                const matchesSearch =
+                    currentSearch === "" ||
+                    searchableText.includes(
+                        currentSearch
+                    );
+
+
+                return (
+                    matchesCategory &&
+                    matchesSearch
+                );
+
+            }
+        );
+
+
+    renderGlossary(
+        filteredTerms
     );
 
 }
@@ -186,10 +402,12 @@ function renderGlossary(
     }
 
 
+    /* Clear */
+
     container.innerHTML = "";
 
 
-    /* Result Count */
+    /* Update Count */
 
     if (count) {
 
@@ -199,7 +417,7 @@ function renderGlossary(
     }
 
 
-    /* No Results */
+    /* Empty State */
 
     if (
         terms.length === 0
@@ -227,7 +445,7 @@ function renderGlossary(
     }
 
 
-    /* Render Cards */
+    /* Render */
 
     container.innerHTML =
         terms
@@ -243,7 +461,7 @@ function renderGlossary(
 
 
 /* =========================================
-   Create Glossary Card
+   Create Term Card
 ========================================= */
 
 function createTermCard(
@@ -354,220 +572,6 @@ function createTermCard(
 
 
 /* =========================================
-   Search Initialization
-========================================= */
-
-function initializeSearch() {
-
-    const searchInput =
-        document.getElementById(
-            "glossarySearch"
-        );
-
-
-    if (!searchInput) {
-
-        return;
-
-    }
-
-
-    searchInput.addEventListener(
-        "input",
-        handleSearch
-    );
-
-}
-
-
-/* =========================================
-   Search Handler
-========================================= */
-
-function handleSearch() {
-
-    applyGlossaryFilters();
-
-}
-
-
-/* =========================================
-   Filter Initialization
-========================================= */
-
-function initializeFilters() {
-
-    const filterContainer =
-        document.getElementById(
-            "glossaryFilter"
-        );
-
-
-    if (!filterContainer) {
-
-        return;
-
-    }
-
-
-    filterContainer.addEventListener(
-        "click",
-        (event) => {
-
-
-            const button =
-                event.target.closest(
-                    ".filter-btn"
-                );
-
-
-            if (!button) {
-
-                return;
-
-            }
-
-
-            setActiveFilter(
-                button
-            );
-
-
-            applyGlossaryFilters();
-
-        }
-    );
-
-}
-
-
-/* =========================================
-   Set Active Filter
-========================================= */
-
-function setActiveFilter(
-    activeButton
-) {
-
-    document
-        .querySelectorAll(
-            ".filter-btn"
-        )
-        .forEach(
-            (button) => {
-
-                button.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    activeButton.classList.add(
-        "active"
-    );
-
-}
-
-
-/* =========================================
-   Apply Search + Category
-========================================= */
-
-function applyGlossaryFilters() {
-
-    const searchInput =
-        document.getElementById(
-            "glossarySearch"
-        );
-
-
-    const searchQuery =
-        searchInput
-            ? searchInput.value
-                .trim()
-                .toLowerCase()
-            : "";
-
-
-    const activeFilter =
-        document.querySelector(
-            ".filter-btn.active"
-        );
-
-
-    const selectedCategory =
-        activeFilter
-            ? activeFilter.dataset.category
-            : "All";
-
-
-    const filteredTerms =
-        glossaryData.filter(
-            (term) => {
-
-
-                /* =========================
-                   Category Match
-                ========================== */
-
-                const categoryMatch =
-                    selectedCategory === "All" ||
-                    term.category ===
-                        selectedCategory;
-
-
-                /* =========================
-                   Searchable Content
-                ========================== */
-
-                const searchableContent =
-                    [
-
-                        term.term,
-
-                        term.category,
-
-                        term.definition,
-
-                        term.syntax,
-
-                        term.example
-
-                    ]
-                    .join(" ")
-                    .toLowerCase();
-
-
-                /* =========================
-                   Search Match
-                ========================== */
-
-                const searchMatch =
-                    searchQuery === "" ||
-                    searchableContent.includes(
-                        searchQuery
-                    );
-
-
-                return (
-                    categoryMatch &&
-                    searchMatch
-                );
-
-            }
-        );
-
-
-    renderGlossary(
-        filteredTerms
-    );
-
-}
-
-
-/* =========================================
    URL Parameters
 ========================================= */
 
@@ -591,23 +595,30 @@ function initializeURLParameters() {
         );
 
 
-    const searchInput =
-        document.getElementById(
-            "glossarySearch"
-        );
-
-
     /* =========================
        Search Parameter
     ========================== */
 
-    if (
-        search &&
-        searchInput
-    ) {
+    if (search) {
 
-        searchInput.value =
-            search;
+        currentSearch =
+            search
+                .trim()
+                .toLowerCase();
+
+
+        const searchInput =
+            document.getElementById(
+                "glossarySearch"
+            );
+
+
+        if (searchInput) {
+
+            searchInput.value =
+                search;
+
+        }
 
     }
 
@@ -618,71 +629,55 @@ function initializeURLParameters() {
 
     if (category) {
 
-        const filterButton =
-            document.querySelector(
-                `.filter-btn[data-category="${category}"]`
+        const validCategory =
+            glossaryData.some(
+                (term) =>
+                    term.category ===
+                    category
             );
 
 
-        if (filterButton) {
+        if (validCategory) {
 
-            setActiveFilter(
-                filterButton
-            );
+            currentCategory =
+                category;
 
         }
 
     }
 
 
-    /* =========================
-       Apply Parameters
-    ========================== */
-
-    if (
-        search ||
-        category
-    ) {
-
-        applyGlossaryFilters();
-
-    }
+    updateActiveFilterFromState();
 
 }
 
+
 /* =========================================
-   Highlight Search Text
+   Update Filter From State
 ========================================= */
 
-function highlightText(
-    text,
-    query
-) {
+function updateActiveFilterFromState() {
 
-    if (!query) {
-
-        return text;
-
-    }
-
-
-    const escapedQuery =
-        query.replace(
-            /[.*+?^${}()|[\]\\]/g,
-            "\\$&"
+    const buttons =
+        document.querySelectorAll(
+            ".filter-btn"
         );
 
 
-    const regex =
-        new RegExp(
-            `(${escapedQuery})`,
-            "gi"
-        );
+    buttons.forEach(
+        (button) => {
+
+            const isActive =
+                button.dataset.category ===
+                currentCategory;
 
 
-    return text.replace(
-        regex,
-        "<mark>$1</mark>"
+            button.classList.toggle(
+                "active",
+                isActive
+            );
+
+        }
     );
 
 }
