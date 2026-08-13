@@ -134,7 +134,7 @@ function initializeSearch() {
     }
 
 
-    searchButton.addEventListener("click", () => {
+    function handleSearch() {
 
         const searchTerm =
             searchInput.value.trim();
@@ -150,11 +150,16 @@ function initializeSearch() {
 
 
         console.log(
-            "Search term:",
-            searchTerm
+            `Searching Tech Glossary Hub for: ${searchTerm}`
         );
 
-    });
+    }
+
+
+    searchButton.addEventListener(
+        "click",
+        handleSearch
+    );
 
 
     searchInput.addEventListener(
@@ -163,7 +168,7 @@ function initializeSearch() {
 
             if (event.key === "Enter") {
 
-                searchButton.click();
+                handleSearch();
 
             }
 

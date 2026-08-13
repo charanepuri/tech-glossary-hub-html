@@ -969,3 +969,978 @@ body.dark-mode .hero-search .form-control::placeholder {
     }
 
 }
+
+
+/* =========================================
+   Phase 3
+   Spider-Man Inspired Home Page
+========================================= */
+
+
+/* =========================================
+   Hero Enhancement
+========================================= */
+
+.hero-section {
+
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(0, 102, 204, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(225, 6, 0, 0.12),
+            transparent 30%
+        ),
+        #05070a;
+
+}
+
+
+.hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+}
+
+
+/* Web Decorative Lines */
+
+.hero-web {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 50%;
+
+}
+
+
+.web-one {
+
+    top: -150px;
+
+    right: -80px;
+
+}
+
+
+.web-two {
+
+    top: -40px;
+
+    right: 80px;
+
+    transform: scale(0.7);
+
+}
+
+
+.web-three {
+
+    bottom: -200px;
+
+    left: -100px;
+
+    transform: scale(0.8);
+
+}
+
+
+/* Hero Content */
+
+.hero-section .hero-title {
+
+    color: #ffffff;
+
+}
+
+
+.hero-section .hero-description {
+
+    color: #a7b0be;
+
+}
+
+
+/* Hero Badge */
+
+.hero-badge {
+
+    border: 1px solid rgba(225, 6, 0, 0.35);
+
+    background: rgba(225, 6, 0, 0.1);
+
+    color: #ff4b45;
+
+}
+
+
+/* Hero Buttons */
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+
+}
+
+
+.hero-actions .btn-outline-secondary {
+
+    border-color: #334155;
+
+    color: #cbd5e1;
+
+}
+
+
+.hero-actions .btn-outline-secondary:hover {
+
+    background: #ffffff;
+
+    color: #05070a;
+
+}
+
+
+/* =========================================
+   Hero Search
+========================================= */
+
+.hero-search .input-group {
+
+    border: 1px solid #263244;
+
+    background: #0d1117;
+
+}
+
+
+.hero-search .input-group-text {
+
+    color: #64748b;
+
+}
+
+
+.hero-search .form-control {
+
+    color: #ffffff;
+
+    background: transparent;
+
+}
+
+
+.hero-search .form-control::placeholder {
+
+    color: #64748b;
+
+}
+
+
+/* =========================================
+   Hero Visual
+========================================= */
+
+.hero-visual {
+
+    position: relative;
+
+    width: 420px;
+
+    height: 420px;
+
+    max-width: 100%;
+
+    margin: 2rem auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.spider-emblem {
+
+    width: 170px;
+
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #e10600 0%,
+            #a30000 70%,
+            #680000 100%
+        );
+
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        0 0 40px rgba(225, 6, 0, 0.35),
+        0 0 100px rgba(0, 102, 204, 0.15);
+
+    color: #ffffff;
+
+    font-size: 4rem;
+
+    z-index: 3;
+
+}
+
+
+/* Orbit */
+
+.orbit {
+
+    position: absolute;
+
+    border: 1px solid rgba(0, 102, 204, 0.35);
+
+    border-radius: 50%;
+
+}
+
+
+.orbit-one {
+
+    width: 280px;
+    height: 280px;
+
+}
+
+
+.orbit-two {
+
+    width: 380px;
+    height: 380px;
+
+    border-color: rgba(225, 6, 0, 0.2);
+
+}
+
+
+/* Floating Cards */
+
+.floating-card {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding: 0.7rem 1rem;
+
+    border: 1px solid #263244;
+
+    border-radius: 10px;
+
+    background: rgba(13, 17, 23, 0.95);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    z-index: 4;
+
+}
+
+
+.floating-card i {
+
+    color: #e10600;
+
+    font-size: 1rem;
+
+}
+
+
+.card-top {
+
+    top: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+.card-right {
+
+    top: 42%;
+
+    right: -10px;
+
+}
+
+
+.card-bottom {
+
+    bottom: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+.card-left {
+
+    top: 42%;
+
+    left: -10px;
+
+}
+
+
+/* =========================================
+   Hero Statistics
+========================================= */
+
+.hero-stats-row {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-top: 5rem;
+
+    border: 1px solid #263244;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #263244;
+
+}
+
+
+.hero-stat {
+
+    padding: 1.3rem;
+
+    text-align: center;
+
+    background: #0b1017;
+
+}
+
+
+.hero-stat strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+
+}
+
+
+.hero-stat span {
+
+    display: block;
+
+    margin-top: 0.3rem;
+
+    color: #64748b;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* =========================================
+   Categories
+========================================= */
+
+.categories-section {
+
+    background: #080b10;
+
+}
+
+
+.categories-section .section-heading span,
+.featured-section .section-heading span {
+
+    color: #e10600;
+
+}
+
+
+.categories-section .section-heading h2,
+.featured-section .section-heading h2 {
+
+    color: #ffffff;
+
+}
+
+
+.categories-section .section-heading p,
+.featured-section .section-heading p {
+
+    color: #8491a5;
+
+}
+
+
+/* Category Card */
+
+.category-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #202938;
+
+    background: #0d1117;
+
+}
+
+
+.category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e10600,
+            #0066cc
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.category-card:hover::before {
+
+    transform: scaleX(1);
+
+}
+
+
+.category-card:hover {
+
+    border-color: #334155;
+
+    background: #101722;
+
+}
+
+
+.category-number {
+
+    position: absolute;
+
+    top: 1.25rem;
+
+    right: 1.5rem;
+
+    color: #263244;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+}
+
+
+.category-icon {
+
+    background:
+        rgba(225, 6, 0, 0.1);
+
+    color: #ff332d;
+
+}
+
+
+.category-card h3 {
+
+    color: #f8fafc;
+
+}
+
+
+.category-card p {
+
+    color: #8491a5;
+
+}
+
+
+.category-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 1.5rem;
+
+}
+
+
+.category-footer span {
+
+    color: #0066cc;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+}
+
+
+.category-footer i {
+
+    color: #e10600;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.category-card:hover .category-footer i {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   Featured Terms
+========================================= */
+
+.featured-section {
+
+    background: #05070a;
+
+}
+
+
+.term-preview-card {
+
+    height: 100%;
+
+    padding: 2rem;
+
+    border: 1px solid #202938;
+
+    border-radius: 18px;
+
+    background: #0d1117;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.term-preview-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(225, 6, 0, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.term-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.25rem;
+
+    border-radius: 14px;
+
+    background: rgba(0, 102, 204, 0.12);
+
+    color: #3399ff;
+
+    font-size: 1.5rem;
+
+}
+
+
+.term-category {
+
+    color: #e10600;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+}
+
+
+.term-preview-card h3 {
+
+    margin-top: 0.5rem;
+
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+}
+
+
+.term-preview-card p {
+
+    margin-top: 0.8rem;
+
+    color: #8491a5;
+
+    line-height: 1.7;
+
+}
+
+
+.term-preview-card a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+
+    color: #3399ff;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+}
+
+
+.term-preview-card a:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta-section {
+
+    padding: 5rem 0;
+
+    background: #080b10;
+
+}
+
+
+.cta-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 4rem 2rem;
+
+    text-align: center;
+
+    border: 1px solid rgba(225, 6, 0, 0.3);
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(225, 6, 0, 0.12),
+            transparent 55%
+        ),
+        #0d1117;
+
+}
+
+
+.cta-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(225, 6, 0, 0.06),
+            transparent 50%,
+            rgba(0, 102, 204, 0.06)
+        );
+
+}
+
+
+.cta-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0.45rem 0.8rem;
+
+    border-radius: 50px;
+
+    background: rgba(225, 6, 0, 0.1);
+
+    color: #ff4b45;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+}
+
+
+.cta-card h2 {
+
+    margin-top: 1rem;
+
+    color: #ffffff;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+}
+
+
+.cta-card p {
+
+    max-width: 600px;
+
+    margin: 1rem auto 2rem;
+
+    color: #8491a5;
+
+    line-height: 1.7;
+
+}
+
+
+.cta-card .btn-light {
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   Responsive Hero
+========================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+
+        min-height: auto;
+
+        padding: 5rem 0;
+
+    }
+
+    .hero-visual {
+
+        margin-top: 4rem;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .hero-actions {
+
+        flex-direction: column;
+
+    }
+
+    .hero-actions .btn {
+
+        width: 100%;
+
+    }
+
+    .hero-stats-row {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        margin-top: 3rem;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-visual {
+
+        width: 300px;
+
+        height: 300px;
+
+    }
+
+    .spider-emblem {
+
+        width: 120px;
+        height: 120px;
+
+        font-size: 3rem;
+
+    }
+
+    .orbit-one {
+
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .orbit-two {
+
+        width: 280px;
+        height: 280px;
+
+    }
+
+    .floating-card {
+
+        padding: 0.55rem 0.7rem;
+
+        font-size: 0.7rem;
+
+    }
+
+    .card-right {
+
+        right: -20px;
+
+    }
+
+    .card-left {
+
+        left: -20px;
+
+    }
+
+}
