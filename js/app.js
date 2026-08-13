@@ -1,301 +1,343 @@
 /* =========================================
    Tech Glossary Hub
-   Application JavaScript
+   Main Application JavaScript
 ========================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    initializeTheme();
-
-    initializeGlossaryData();
-
-    initializeFeaturedTerms();
-
-    initializeSearch();
-
-    initializeExploreButton();
-
-});
 
 
 /* =========================================
-   Theme
+   DOM Ready
 ========================================= */
 
-function initializeTheme() {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    const themeToggle =
-        document.getElementById("themeToggle");
+        initializeTheme();
 
-    if (!themeToggle) {
-        return;
-    }
+        initializeHomePage();
 
-
-    const savedTheme =
-        localStorage.getItem("tech-glossary-theme");
-
-
-    if (savedTheme === "dark") {
-
-        document.body.classList.add("dark-mode");
+        initializeSearch();
 
     }
+);
 
 
-    updateThemeIcon();
+/* =========================================
+   Home Page Initialization
+========================================= */
 
+function initializeHomePage() {
 
-    themeToggle.addEventListener("click", () => {
+    if (
+        typeof glossaryData === "undefined"
+    ) {
 
-        document.body.classList.toggle("dark-mode");
-
-        const currentTheme =
-            document.body.classList.contains("dark-mode")
-                ? "dark"
-                : "light";
-
-
-        localStorage.setItem(
-            "tech-glossary-theme",
-            currentTheme
+        console.error(
+            "glossaryData is not available."
         );
 
+        return;
 
-        updateThemeIcon();
+    }
 
-    });
+
+    updateStatistics();
+
+    renderCategories();
+
+    renderFeaturedTerms();
 
 }
 
 
 /* =========================================
-   Theme Icon
+   Statistics
 ========================================= */
 
-function updateThemeIcon() {
+function updateStatistics() {
 
-    const themeToggle =
-        document.getElementById("themeToggle");
-
-    if (!themeToggle) {
-        return;
-    }
+    const totalTermsElement =
+        document.getElementById(
+            "totalTerms"
+        );
 
 
-    const icon =
-        themeToggle.querySelector("i");
+    const totalCategoriesElement =
+        document.getElementById(
+            "totalCategories"
+        );
 
 
     if (
-        document.body.classList.contains("dark-mode")
+        !totalTermsElement ||
+        !totalCategoriesElement
     ) {
 
-        icon.className = "bi bi-sun-fill";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            "Switch to light mode"
-        );
-
-        themeToggle.setAttribute(
-            "title",
-            "Switch to light mode"
-        );
-
-    } else {
-
-        icon.className = "bi bi-moon-fill";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            "Switch to dark mode"
-        );
-
-        themeToggle.setAttribute(
-            "title",
-            "Switch to dark mode"
-        );
-
-    }
-
-}
-
-
-/* =========================================
-   Search
-========================================= */
-
-function initializeSearch() {
-
-    const searchButton =
-        document.getElementById("searchButton");
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-
-    if (!searchButton || !searchInput) {
-        return;
-    }
-
-
-    function handleSearch() {
-
-        const searchTerm =
-            searchInput.value.trim();
-
-
-        if (!searchTerm) {
-
-            searchInput.focus();
-
-            return;
-
-        }
-
-
-        console.log(
-            `Searching Tech Glossary Hub for: ${searchTerm}`
-        );
-
-    }
-
-
-    searchButton.addEventListener(
-        "click",
-        handleSearch
-    );
-
-
-    searchInput.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (event.key === "Enter") {
-
-                handleSearch();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================
-   Explore Glossary
-========================================= */
-
-function initializeExploreButton() {
-
-    const exploreButton =
-        document.getElementById("exploreGlossary");
-
-
-    if (!exploreButton) {
-        return;
-    }
-
-
-    exploreButton.addEventListener("click", () => {
-
-        console.log(
-            "Glossary navigation will be implemented in Phase 5."
-        );
-
-    });
-
-}
-
-
-function initializeGlossaryData() {
-
-    if (typeof glossaryData === "undefined") {
-
-        console.error(
-            "Glossary data could not be loaded."
-        );
-
         return;
 
     }
 
 
-    updateTotalTerms();
-
-    updateCategoryCounts();
-
-}
-
-function updateTotalTerms() {
-
-    const totalTerms =
-        document.getElementById("totalTerms");
+    const categories =
+        getCategories();
 
 
-    if (!totalTerms) {
-        return;
-    }
-
-
-    totalTerms.textContent =
+    totalTermsElement.textContent =
         glossaryData.length + "+";
 
-}
 
-function updateCategoryCounts() {
-
-    const categoryCards =
-        document.querySelectorAll(
-            ".category-card[data-category]"
-        );
-
-
-    categoryCards.forEach((card) => {
-
-        const category =
-            card.dataset.category;
-
-
-        const count =
-            glossaryData.filter(
-                (item) =>
-                    item.category === category
-            ).length;
-
-
-        const countElement =
-            card.querySelector(".category-count");
-
-
-        if (countElement) {
-
-            countElement.textContent =
-                `${count} Terms`;
-
-        }
-
-    });
+    totalCategoriesElement.textContent =
+        categories.length;
 
 }
 
-function initializeFeaturedTerms() {
+
+/* =========================================
+   Get Categories
+========================================= */
+
+function getCategories() {
+
+    return [
+        ...new Set(
+            glossaryData.map(
+                (item) => item.category
+            )
+        )
+    ];
+
+}
+
+
+/* =========================================
+   Category Configuration
+========================================= */
+
+const categoryConfig = {
+
+    "Web Development & Design": {
+
+        icon: "bi-globe2",
+
+        description:
+            "Learn HTML, CSS, JavaScript, responsive design, APIs, and essential web concepts."
+
+    },
+
+
+    "Software Engineering": {
+
+        icon: "bi-code-square",
+
+        description:
+            "Understand Git, Agile, testing, CI/CD, software development, and engineering practices."
+
+    },
+
+
+    "Data Science & AI": {
+
+        icon: "bi-robot",
+
+        description:
+            "Explore machine learning, neural networks, datasets, NLP, AI, and data science concepts."
+
+    },
+
+
+    "Cybersecurity": {
+
+        icon: "bi-shield-lock",
+
+        description:
+            "Learn authentication, authorization, encryption, malware, phishing, firewalls, and security concepts."
+
+    },
+
+
+    "Cloud & Networking": {
+
+        icon: "bi-cloud",
+
+        description:
+            "Explore cloud computing, Docker, Kubernetes, DNS, IP addresses, networking, and cloud platforms."
+
+    }
+
+};
+
+
+/* =========================================
+   Render Categories
+========================================= */
+
+function renderCategories() {
 
     const container =
-        document.getElementById("featuredTerms");
+        document.getElementById(
+            "categoryContainer"
+        );
 
 
     if (!container) {
+
         return;
+
+    }
+
+
+    const categories =
+        getCategories();
+
+
+    container.innerHTML =
+        categories
+            .map(
+                (
+                    category,
+                    index
+                ) => {
+
+                    return createCategoryCard(
+                        category,
+                        index
+                    );
+
+                }
+            )
+            .join("");
+
+}
+
+
+/* =========================================
+   Create Category Card
+========================================= */
+
+function createCategoryCard(
+    category,
+    index
+) {
+
+    const config =
+        categoryConfig[category];
+
+
+    const count =
+        glossaryData.filter(
+            (item) =>
+                item.category === category
+        ).length;
+
+
+    const number =
+        String(index + 1)
+            .padStart(2, "0");
+
+
+    const columnClass =
+        index < 3
+            ? "col-md-6 col-lg-4"
+            : "col-md-6 col-lg-6";
+
+
+    return `
+
+        <div class="${columnClass}">
+
+            <div
+                class="category-card"
+                data-category="${category}"
+            >
+
+                <div class="category-number">
+
+                    ${number}
+
+                </div>
+
+
+                <div class="category-icon">
+
+                    <i
+                        class="bi ${config.icon}"
+                    ></i>
+
+                </div>
+
+
+                <h3>
+
+                    ${category}
+
+                </h3>
+
+
+                <p>
+
+                    ${config.description}
+
+                </p>
+
+
+                <div class="category-footer">
+
+
+                    <span>
+
+                        ${count} Terms
+
+                    </span>
+
+
+                    <a
+                        href="pages/glossary.html?category=${encodeURIComponent(category)}"
+                        aria-label="Explore ${category}"
+                    >
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================
+   Featured Terms
+========================================= */
+
+function renderFeaturedTerms() {
+
+    const container =
+        document.getElementById(
+            "featuredTerms"
+        );
+
+
+    if (!container) {
+
+        return;
+
     }
 
 
     const featuredIds = [
+
         "html",
+
         "git",
+
         "artificial-intelligence"
+
     ];
 
 
@@ -304,7 +346,8 @@ function initializeFeaturedTerms() {
             .map(
                 (id) =>
                     glossaryData.find(
-                        (term) => term.id === id
+                        (term) =>
+                            term.id === id
                     )
             )
             .filter(Boolean);
@@ -313,22 +356,36 @@ function initializeFeaturedTerms() {
     container.innerHTML =
         featuredTerms
             .map(
-                (term) => createFeaturedTermCard(term)
+                (term) =>
+                    createFeaturedTermCard(
+                        term
+                    )
             )
             .join("");
 
 }
 
+
+/* =========================================
+   Create Featured Term Card
+========================================= */
+
 function createFeaturedTermCard(term) {
 
+    const icon =
+        getTermIcon(term.id);
+
+
     return `
+
         <div class="col-md-6 col-lg-4">
 
-            <div class="term-preview-card">
+            <article class="term-preview-card">
+
 
                 <div class="term-icon">
 
-                    <i class="bi bi-code-square"></i>
+                    <i class="bi ${icon}"></i>
 
                 </div>
 
@@ -355,8 +412,7 @@ function createFeaturedTermCard(term) {
 
 
                 <a
-                    href="#"
-                    data-term-id="${term.id}"
+                    href="pages/term.html?id=${term.id}"
                 >
 
                     View Term
@@ -365,9 +421,258 @@ function createFeaturedTermCard(term) {
 
                 </a>
 
-            </div>
+
+            </article>
 
         </div>
+
     `;
+
+}
+
+
+/* =========================================
+   Term Icons
+========================================= */
+
+function getTermIcon(termId) {
+
+    const icons = {
+
+        html:
+            "bi-filetype-html",
+
+        css:
+            "bi-filetype-css",
+
+        javascript:
+            "bi-filetype-js",
+
+        git:
+            "bi-git",
+
+        "artificial-intelligence":
+            "bi-stars",
+
+        "machine-learning":
+            "bi-graph-up-arrow",
+
+        docker:
+            "bi-box-seam",
+
+        cybersecurity:
+            "bi-shield-lock",
+
+        "cloud-computing":
+            "bi-cloud"
+
+    };
+
+
+    return (
+        icons[termId] ||
+        "bi-code-square"
+    );
+
+}
+
+
+/* =========================================
+   Search
+========================================= */
+
+function initializeSearch() {
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    const searchButton =
+        document.getElementById(
+            "searchButton"
+        );
+
+
+    if (
+        !searchInput ||
+        !searchButton
+    ) {
+
+        return;
+
+    }
+
+
+    function performSearch() {
+
+        const query =
+            searchInput.value.trim();
+
+
+        if (!query) {
+
+            return;
+
+        }
+
+
+        window.location.href =
+            `pages/glossary.html?search=${encodeURIComponent(query)}`;
+
+    }
+
+
+    searchButton.addEventListener(
+        "click",
+        performSearch
+    );
+
+
+    searchInput.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                performSearch();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   Theme
+========================================= */
+
+function initializeTheme() {
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    if (!themeToggle) {
+
+        return;
+
+    }
+
+
+    const savedTheme =
+        localStorage.getItem(
+            "tech-glossary-theme"
+        );
+
+
+    if (savedTheme) {
+
+        document.body.dataset.theme =
+            savedTheme;
+
+    }
+
+
+    updateThemeIcon();
+
+
+    themeToggle.addEventListener(
+        "click",
+        toggleTheme
+    );
+
+}
+
+
+/* =========================================
+   Toggle Theme
+========================================= */
+
+function toggleTheme() {
+
+    const currentTheme =
+        document.body.dataset.theme ||
+        "dark";
+
+
+    const newTheme =
+        currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+
+    document.body.dataset.theme =
+        newTheme;
+
+
+    localStorage.setItem(
+        "tech-glossary-theme",
+        newTheme
+    );
+
+
+    updateThemeIcon();
+
+}
+
+
+/* =========================================
+   Theme Icon
+========================================= */
+
+function updateThemeIcon() {
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    if (!themeToggle) {
+
+        return;
+
+    }
+
+
+    const icon =
+        themeToggle.querySelector(
+            "i"
+        );
+
+
+    if (!icon) {
+
+        return;
+
+    }
+
+
+    const currentTheme =
+        document.body.dataset.theme ||
+        "dark";
+
+
+    if (
+        currentTheme === "dark"
+    ) {
+
+        icon.className =
+            "bi bi-moon-fill";
+
+    } else {
+
+        icon.className =
+            "bi bi-sun-fill";
+
+    }
 
 }
