@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn about Tech Glossary Hub, an interactive technology glossary for developers and technology learners."
+    >
+
+    <meta
+        name="author"
+        content="Charan Teja Epuri"
+    >
+
+    <title>
+        About | Tech Glossary Hub
+    </title>
+
+
+    <!-- Bootstrap CSS -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- Custom CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <style>
+        /* =========================================
+   About Page
+========================================= */
+
+.about-page-header {
+
+    padding: 5rem 0 4rem;
+
+    background:
+        var(--bg-primary);
+
+    border-bottom:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.about-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+
+    padding: 0.45rem 0.9rem;
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    border-radius: 50px;
+
+    background:
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    color:
+        var(--primary-color);
+
+    font-size: 0.7rem;
+
+    font-weight: 750;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.about-page-header h1 {
+
+    margin: 0 0 1rem;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.5rem
+        );
+
+    font-weight: 850;
+
+}
+
+
+.about-page-header p {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color:
+        var(--text-secondary);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   About Main
+========================================= */
+
+.about-page {
+
+    min-height: 70vh;
+
+    padding: 5rem 0;
+
+    background:
+        var(--bg-primary);
+
+}
+
+
+.about-section {
+
+    padding: 2rem 0 5rem;
+
+}
+
+
+.about-section-label {
+
+    display: inline-block;
+
+    margin-bottom: 0.8rem;
+
+    color:
+        var(--primary-color);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.about-section h2 {
+
+    margin-bottom: 1rem;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            1.7rem,
+            4vw,
+            2.5rem
+        );
+
+    font-weight: 800;
+
+}
+
+
+.about-section p {
+
+    color:
+        var(--text-secondary);
+
+    line-height: 1.8;
+
+}
+
+
+.about-section-intro {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================
+   About Visual
+========================================= */
+
+.about-visual {
+
+    position: relative;
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 24px;
+
+    background:
+        var(--bg-secondary);
+
+    overflow: hidden;
+
+}
+
+
+.about-visual-web {
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border:
+        1px solid
+        rgba(
+            225,
+            6,
+            0,
+            0.2
+        );
+
+    border-radius: 50%;
+
+}
+
+
+.about-visual-web::before,
+.about-visual-web::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 35px;
+
+    border:
+        1px solid
+        rgba(
+            51,
+            153,
+            255,
+            0.15
+        );
+
+    border-radius: 50%;
+
+}
+
+
+.about-visual-web::after {
+
+    inset: 70px;
+
+    border-color:
+        rgba(
+            225,
+            6,
+            0,
+            0.18
+        );
+
+}
+
+
+.about-visual-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100px;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    border-radius: 22px;
+
+    background:
+        var(--bg-tertiary);
+
+    color:
+        var(--primary-color);
+
+    font-size: 3rem;
+
+    box-shadow:
+        0 0 40px
+        var(--primary-shadow);
+
+}
+
+
+.about-visual-label {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 1.5rem;
+
+    color:
+        var(--text-muted);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+/* =========================================
+   About Primary Button
+========================================= */
+
+.about-primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+
+    padding: 0.75rem 1.15rem;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary-color);
+
+    color: #ffffff;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        gap 0.3s ease;
+
+}
+
+
+.about-primary-button:hover {
+
+    background:
+        var(--primary-hover);
+
+    color: #ffffff;
+
+    transform:
+        translateY(-2px);
+
+    gap: 0.7rem;
+
+}
+
+
+/* =========================================
+   About Feature Cards
+========================================= */
+
+.about-feature-card {
+
+    height: 100%;
+
+    padding: 2rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 16px;
+
+    background:
+        var(--bg-secondary);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.about-feature-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--primary-color);
+
+}
+
+
+.about-feature-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 1.2rem;
+
+    border-radius: 12px;
+
+    background:
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    color:
+        var(--primary-color);
+
+    font-size: 1.3rem;
+
+}
+
+
+.about-feature-card h3 {
+
+    margin-bottom: 0.7rem;
+
+    color:
+        var(--text-primary);
+
+    font-size: 1.1rem;
+
+    font-weight: 750;
+
+}
+
+
+.about-feature-card p {
+
+    margin: 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   Technology Cards
+========================================= */
+
+.about-tech-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    min-height: 130px;
+
+    padding: 1.5rem;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 16px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-primary);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.about-tech-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--primary-color);
+
+}
+
+
+.about-tech-card i {
+
+    color:
+        var(--primary-color);
+
+    font-size: 2rem;
+
+}
+
+
+.about-tech-card span {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   About Statistics
+========================================= */
+
+.about-statistics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius: 18px;
+
+    background:
+        var(--bg-secondary);
+
+    overflow: hidden;
+
+}
+
+
+.about-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 2rem;
+
+}
+
+
+.about-stat + .about-stat {
+
+    border-left:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.about-stat strong {
+
+    color:
+        var(--primary-color);
+
+    font-size: 2rem;
+
+    font-weight: 850;
+
+}
+
+
+.about-stat span {
+
+    color:
+        var(--text-muted);
+
+    font-size: 0.75rem;
+
+}
+
+
+/* =========================================
+   About CTA
+========================================= */
+
+.about-cta {
+
+    position: relative;
+
+    padding: 4rem 2rem;
+
+    border:
+        1px solid
+        rgba(
+            225,
+            6,
+            0,
+            0.25
+        );
+
+    border-radius: 22px;
+
+    background:
+        var(--bg-secondary);
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+.about-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    top: -150px;
+
+    right: -80px;
+
+    border:
+        1px solid
+        rgba(
+            51,
+            153,
+            255,
+            0.15
+        );
+
+    border-radius: 50%;
+
+}
+
+
+.about-cta-content {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.about-cta-content > span {
+
+    color:
+        var(--accent-color);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.about-cta h2 {
+
+    margin:
+        0.6rem 0 0.8rem;
+
+}
+
+
+.about-cta p {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   About Responsive
+========================================= */
+
+@media (max-width: 767px) {
+
+    .about-page-header {
+
+        padding:
+            3.5rem 0 3rem;
+
+    }
+
+
+    .about-page {
+
+        padding:
+            3rem 0;
+
+    }
+
+
+    .about-section {
+
+        padding-bottom:
+            3rem;
+
+    }
+
+
+    .about-visual {
+
+        min-height: 280px;
+
+    }
+
+
+    .about-statistics {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .about-stat + .about-stat {
+
+        border-left: 0;
+
+        border-top:
+            1px solid
+            var(--border-color);
+
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         Navbar
+    ====================================== -->
+
+    <nav
+        class="navbar navbar-expand-lg site-navbar sticky-top"
+    >
+
+        <div class="container">
+
+
+            <!-- Brand -->
+
+            <a
+                class="navbar-brand brand"
+                href="../index.html"
+            >
+
+                <span class="brand-icon">
+
+                    <i class="bi bi-book-half"></i>
+
+                </span>
+
+
+                <span class="brand-text">
+
+                    Tech Glossary Hub
+
+                </span>
+
+            </a>
+
+
+            <!-- Mobile Toggle -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavigation"
+            >
+
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center"
+                >
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html"
+                        >
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="categories.html"
+                        >
+                            Categories
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="glossary.html"
+                        >
+                            Glossary
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="about.html"
+                        >
+                            About
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- Theme Toggle -->
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle theme"
+                    title="Toggle theme"
+                >
+
+                    <i class="bi bi-moon-fill"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         About Header
+    ====================================== -->
+
+    <header class="about-page-header">
+
+        <div class="container">
+
+            <div class="text-center">
+
+
+                <span class="about-badge">
+
+                    <i class="bi bi-info-circle"></i>
+
+                    ABOUT THE PROJECT
+
+                </span>
+
+
+                <h1>
+
+                    About Tech Glossary Hub
+
+                </h1>
+
+
+                <p>
+
+                    A simple and interactive place to understand
+                    important technology concepts.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         About Content
+    ====================================== -->
+
+    <main class="about-page">
+
+        <div class="container">
+
+
+            <!-- Introduction -->
+
+            <section class="about-section">
+
+                <div class="row align-items-center g-5">
+
+
+                    <div class="col-lg-6">
+
+                        <span class="about-section-label">
+
+                            INTRODUCTION
+
+                        </span>
+
+
+                        <h2>
+
+                            Learn Technology,
+                            One Concept at a Time.
+
+                        </h2>
+
+
+                        <p>
+
+                            Tech Glossary Hub is an interactive
+                            technology glossary designed to make
+                            technical concepts easier to understand.
+
+                        </p>
+
+
+                        <p>
+
+                            Each glossary term provides a concise
+                            definition, syntax, and one practical
+                            example so learners can quickly understand
+                            the concept.
+
+                        </p>
+
+
+                        <a
+                            href="glossary.html"
+                            class="about-primary-button"
+                        >
+
+                            Explore Glossary
+
+                            <i
+                                class="bi bi-arrow-right"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="about-visual">
+
+
+                            <div
+                                class="about-visual-web"
+                            ></div>
+
+
+                            <div
+                                class="about-visual-icon"
+                            >
+
+                                <i
+                                    class="bi bi-book-half"
+                                ></i>
+
+                            </div>
+
+
+                            <span
+                                class="about-visual-label"
+                            >
+
+                                TECH GLOSSARY
+
+                            </span>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Project Purpose -->
+
+            <section class="about-section">
+
+
+                <div class="text-center mb-5">
+
+                    <span class="about-section-label">
+
+                        PROJECT PURPOSE
+
+                    </span>
+
+
+                    <h2>
+
+                        Built for Technology Learners
+
+                    </h2>
+
+
+                    <p
+                        class="about-section-intro"
+                    >
+
+                        The project focuses on presenting
+                        technical terminology in a simple,
+                        structured, and accessible format.
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <div class="col-md-4">
+
+                        <article
+                            class="about-feature-card"
+                        >
+
+                            <div
+                                class="about-feature-icon"
+                            >
+
+                                <i
+                                    class="bi bi-lightning"
+                                ></i>
+
+                            </div>
+
+
+                            <h3>
+
+                                Simple
+
+                            </h3>
+
+
+                            <p>
+
+                                Technical concepts are presented
+                                using concise and beginner-friendly
+                                explanations.
+
+                            </p>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <article
+                            class="about-feature-card"
+                        >
+
+                            <div
+                                class="about-feature-icon"
+                            >
+
+                                <i
+                                    class="bi bi-grid"
+                                ></i>
+
+                            </div>
+
+
+                            <h3>
+
+                                Organized
+
+                            </h3>
+
+
+                            <p>
+
+                                Terms are grouped into five major
+                                technology categories for easier
+                                navigation.
+
+                            </p>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <article
+                            class="about-feature-card"
+                        >
+
+                            <div
+                                class="about-feature-icon"
+                            >
+
+                                <i
+                                    class="bi bi-phone"
+                                ></i>
+
+                            </div>
+
+
+                            <h3>
+
+                                Responsive
+
+                            </h3>
+
+
+                            <p>
+
+                                The interface is designed to work
+                                across desktops, tablets, and
+                                mobile devices.
+
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Technology Stack -->
+
+            <section class="about-section">
+
+
+                <div class="text-center mb-5">
+
+                    <span class="about-section-label">
+
+                        TECHNOLOGY STACK
+
+                    </span>
+
+
+                    <h2>
+
+                        Built Using Web Technologies
+
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="row g-4 justify-content-center"
+                >
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div
+                            class="about-tech-card"
+                        >
+
+                            <i
+                                class="bi bi-filetype-html"
+                            ></i>
+
+                            <span>
+                                HTML5
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div
+                            class="about-tech-card"
+                        >
+
+                            <i
+                                class="bi bi-filetype-css"
+                            ></i>
+
+                            <span>
+                                CSS3
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div
+                            class="about-tech-card"
+                        >
+
+                            <i
+                                class="bi bi-filetype-js"
+                            ></i>
+
+                            <span>
+                                JavaScript
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 col-md-3">
+
+                        <div
+                            class="about-tech-card"
+                        >
+
+                            <i
+                                class="bi bi-bootstrap"
+                            ></i>
+
+                            <span>
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Statistics -->
+
+            <section class="about-section">
+
+
+                <div
+                    class="about-statistics"
+                >
+
+
+                    <div class="about-stat">
+
+                        <strong>
+                            5
+                        </strong>
+
+                        <span>
+                            Categories
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-stat">
+
+                        <strong>
+                            75
+                        </strong>
+
+                        <span>
+                            Terms
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-stat">
+
+                        <strong>
+                            15
+                        </strong>
+
+                        <span>
+                            Terms / Category
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- CTA -->
+
+            <section class="about-cta">
+
+
+                <div class="about-cta-content">
+
+                    <span>
+
+                        READY TO EXPLORE?
+
+                    </span>
+
+
+                    <h2>
+
+                        Start Exploring Technology
+
+                    </h2>
+
+
+                    <p>
+
+                        Browse the glossary and discover
+                        technology concepts across different
+                        domains.
+
+                    </p>
+
+
+                    <a
+                        href="glossary.html"
+                        class="about-primary-button"
+                    >
+
+                        Open Glossary
+
+                        <i
+                            class="bi bi-arrow-right"
+                        ></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         Footer
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <div class="col-lg-5">
+
+                    <a
+                        href="../index.html"
+                        class="footer-brand"
+                    >
+
+                        <i
+                            class="bi bi-book-half"
+                        ></i>
+
+                        Tech Glossary Hub
+
+                    </a>
+
+
+                    <p class="footer-description">
+
+                        An interactive technology glossary helping
+                        learners understand important technical
+                        concepts through simple explanations.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <h5>
+                        Quick Links
+                    </h5>
+
+
+                    <ul class="footer-links">
+
+                        <li>
+
+                            <a href="../index.html">
+                                Home
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="categories.html">
+                                Categories
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="glossary.html">
+                                Glossary
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="about.html">
+                                About
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-sm-6 col-lg-4">
+
+                    <h5>
+                        Built With
+                    </h5>
+
+
+                    <div class="tech-badges">
+
+                        <span>
+                            HTML5
+                        </span>
+
+                        <span>
+                            CSS3
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            Bootstrap
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr class="footer-divider">
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Tech Glossary Hub
+                </p>
+
+
+                <p>
+                    Built with ❤️ for technology learners
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+    <!-- Main Application -->
+
+    <script
+        src="../js/app.js"
+    ></script>
+
+</body>
+
+</html>

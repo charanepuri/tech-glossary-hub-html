@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex"
+    >
+
+    <title>
+        404 | Tech Glossary Hub
+    </title>
+
+
+    <!-- Bootstrap CSS -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- Custom CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+        /* =========================================
+   Custom 404 Page
+========================================= */
+
+.error-page {
+
+    position: relative;
+
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5rem 0;
+
+    background:
+        var(--bg-primary);
+
+    overflow: hidden;
+
+}
+
+
+.error-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   404 Number
+========================================= */
+
+.error-number {
+
+    margin-bottom: -1rem;
+
+    color:
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    font-size:
+        clamp(
+            8rem,
+            25vw,
+            16rem
+        );
+
+    font-weight: 950;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.08em;
+
+}
+
+
+/* =========================================
+   Error Icon
+========================================= */
+
+.error-icon {
+
+    position: relative;
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        -2rem auto 1.5rem;
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    border-radius: 20px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--primary-color);
+
+    font-size: 1.8rem;
+
+    box-shadow:
+        0 0 35px
+        var(--primary-shadow);
+
+}
+
+
+.error-label {
+
+    color:
+        var(--accent-color);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.error-content h1 {
+
+    margin:
+        0.7rem 0 1rem;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.8rem
+        );
+
+    font-weight: 850;
+
+}
+
+
+.error-content p {
+
+    max-width: 550px;
+
+    margin:
+        0 auto 2rem;
+
+    color:
+        var(--text-secondary);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   Error Buttons
+========================================= */
+
+.error-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 0.8rem;
+
+}
+
+
+.error-primary-button,
+.error-secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding:
+        0.75rem 1.1rem;
+
+    border-radius: 10px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.error-primary-button {
+
+    background:
+        var(--primary-color);
+
+    color: #ffffff;
+
+}
+
+
+.error-primary-button:hover {
+
+    background:
+        var(--primary-hover);
+
+    color: #ffffff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.error-secondary-button {
+
+    border:
+        1px solid
+        var(--border-color);
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.error-secondary-button:hover {
+
+    border-color:
+        var(--primary-color);
+
+    color:
+        var(--text-primary);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================
+   Spider-Man Web
+========================================= */
+
+.error-web {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    opacity: 0.5;
+
+}
+
+
+.error-web::before,
+.error-web::after,
+.error-web span {
+
+    position: absolute;
+
+    content: "";
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 100%;
+
+    height: 100%;
+
+    border:
+        1px solid
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+.error-web::before {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.error-web::after {
+
+    width: 75%;
+
+    height: 75%;
+
+    border-color:
+        rgba(
+            51,
+            153,
+            255,
+            0.08
+        );
+
+}
+
+
+.error-web span:nth-child(1) {
+
+    width: 50%;
+
+    height: 50%;
+
+}
+
+
+.error-web span:nth-child(2) {
+
+    width: 25%;
+
+    height: 25%;
+
+    border-color:
+        rgba(
+            225,
+            6,
+            0,
+            0.1
+        );
+
+}
+
+
+.error-web span:nth-child(3) {
+
+    width: 10%;
+
+    height: 10%;
+
+    border-color:
+        rgba(
+            51,
+            153,
+            255,
+            0.1
+        );
+
+}
+
+
+/* =========================================
+   404 Responsive
+========================================= */
+
+@media (max-width: 575px) {
+
+    .error-page {
+
+        min-height: 70vh;
+
+        padding:
+            4rem 1rem;
+
+    }
+
+
+    .error-number {
+
+        font-size:
+            8rem;
+
+    }
+
+
+    .error-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .error-primary-button,
+    .error-secondary-button {
+
+        justify-content: center;
+
+    }
+
+
+    .error-web {
+
+        width: 350px;
+
+        height: 350px;
+
+    }
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         Navbar
+    ====================================== -->
+
+    <nav class="navbar navbar-expand-lg site-navbar">
+
+        <div class="container">
+
+
+            <a
+                class="navbar-brand brand"
+                href="index.html"
+            >
+
+                <span class="brand-icon">
+
+                    <i class="bi bi-book-half"></i>
+
+                </span>
+
+
+                <span class="brand-text">
+
+                    Tech Glossary Hub
+
+                </span>
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavigation"
+            >
+
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center"
+                >
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="index.html"
+                        >
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="pages/categories.html"
+                        >
+                            Categories
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="pages/glossary.html"
+                        >
+                            Glossary
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="pages/about.html"
+                        >
+                            About
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle theme"
+                    title="Toggle theme"
+                >
+
+                    <i class="bi bi-moon-fill"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         404 Content
+    ====================================== -->
+
+    <main class="error-page">
+
+        <div class="container">
+
+
+            <div class="error-content">
+
+
+                <div class="error-web">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="error-number">
+
+                    404
+
+                </div>
+
+
+                <div class="error-icon">
+
+                    <i
+                        class="bi bi-signpost-split"
+                    ></i>
+
+                </div>
+
+
+                <span class="error-label">
+
+                    PAGE NOT FOUND
+
+                </span>
+
+
+                <h1>
+
+                    Looks Like You Took
+                    a Wrong Turn.
+
+                </h1>
+
+
+                <p>
+
+                    The page you're looking for doesn't exist
+                    or may have been moved somewhere else.
+
+                </p>
+
+
+                <div class="error-actions">
+
+
+                    <a
+                        href="index.html"
+                        class="error-primary-button"
+                    >
+
+                        <i
+                            class="bi bi-house"
+                        ></i>
+
+                        Back to Home
+
+                    </a>
+
+
+                    <a
+                        href="pages/glossary.html"
+                        class="error-secondary-button"
+                    >
+
+                        <i
+                            class="bi bi-book"
+                        ></i>
+
+                        Browse Glossary
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         Footer
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Tech Glossary Hub
+                </p>
+
+
+                <p>
+                    Built with ❤️ for technology learners
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+    <!-- Main Application -->
+
+    <script
+        src="js/app.js"
+    ></script>
+
+</body>
+
+</html>
