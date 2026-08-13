@@ -6,7 +6,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     initializeTheme();
+
+    initializeGlossaryData();
+
+    initializeFeaturedTerms();
+
     initializeSearch();
+
     initializeExploreButton();
 
 });
@@ -200,5 +206,168 @@ function initializeExploreButton() {
         );
 
     });
+
+}
+
+
+function initializeGlossaryData() {
+
+    if (typeof glossaryData === "undefined") {
+
+        console.error(
+            "Glossary data could not be loaded."
+        );
+
+        return;
+
+    }
+
+
+    updateTotalTerms();
+
+    updateCategoryCounts();
+
+}
+
+function updateTotalTerms() {
+
+    const totalTerms =
+        document.getElementById("totalTerms");
+
+
+    if (!totalTerms) {
+        return;
+    }
+
+
+    totalTerms.textContent =
+        glossaryData.length + "+";
+
+}
+
+function updateCategoryCounts() {
+
+    const categoryCards =
+        document.querySelectorAll(
+            ".category-card[data-category]"
+        );
+
+
+    categoryCards.forEach((card) => {
+
+        const category =
+            card.dataset.category;
+
+
+        const count =
+            glossaryData.filter(
+                (item) =>
+                    item.category === category
+            ).length;
+
+
+        const countElement =
+            card.querySelector(".category-count");
+
+
+        if (countElement) {
+
+            countElement.textContent =
+                `${count} Terms`;
+
+        }
+
+    });
+
+}
+
+function initializeFeaturedTerms() {
+
+    const container =
+        document.getElementById("featuredTerms");
+
+
+    if (!container) {
+        return;
+    }
+
+
+    const featuredIds = [
+        "html",
+        "git",
+        "artificial-intelligence"
+    ];
+
+
+    const featuredTerms =
+        featuredIds
+            .map(
+                (id) =>
+                    glossaryData.find(
+                        (term) => term.id === id
+                    )
+            )
+            .filter(Boolean);
+
+
+    container.innerHTML =
+        featuredTerms
+            .map(
+                (term) => createFeaturedTermCard(term)
+            )
+            .join("");
+
+}
+
+function createFeaturedTermCard(term) {
+
+    return `
+        <div class="col-md-6 col-lg-4">
+
+            <div class="term-preview-card">
+
+                <div class="term-icon">
+
+                    <i class="bi bi-code-square"></i>
+
+                </div>
+
+
+                <span class="term-category">
+
+                    ${term.category}
+
+                </span>
+
+
+                <h3>
+
+                    ${term.term}
+
+                </h3>
+
+
+                <p>
+
+                    ${term.definition}
+
+                </p>
+
+
+                <a
+                    href="#"
+                    data-term-id="${term.id}"
+                >
+
+                    View Term
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+    `;
 
 }
