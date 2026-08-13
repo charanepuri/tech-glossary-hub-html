@@ -2569,3 +2569,39 @@ body.dark-mode .hero-search .form-control::placeholder {
     }
 
 }
+
+/* =========================================
+   Search Focus
+========================================= */
+
+.glossary-search .input-group {
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.glossary-search .input-group:focus-within {
+
+    border-color: #e10600;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            225,
+            6,
+            0,
+            0.1
+        );
+
+}
+
+
+.glossary-search .form-control:focus {
+
+    outline: none;
+
+    box-shadow: none;
+
+}

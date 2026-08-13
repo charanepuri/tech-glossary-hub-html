@@ -15,7 +15,7 @@ document.addEventListener(
 
 
 /* =========================================
-   Initialize
+   Initialize Glossary Page
 ========================================= */
 
 function initializeGlossaryPage() {
@@ -39,7 +39,6 @@ function initializeGlossaryPage() {
         glossaryData
     );
 
-
     initializeSearch();
 
     initializeFilters();
@@ -50,7 +49,7 @@ function initializeGlossaryPage() {
 
 
 /* =========================================
-   Render Filters
+   Render Category Filters
 ========================================= */
 
 function renderFilters() {
@@ -68,14 +67,15 @@ function renderFilters() {
     }
 
 
-    const categories = [
-        ...new Set(
-            glossaryData.map(
-                (term) =>
-                    term.category
+    const categories =
+        [
+            ...new Set(
+                glossaryData.map(
+                    (term) =>
+                        term.category
+                )
             )
-        )
-    ];
+        ];
 
 
     const buttons = [
@@ -92,13 +92,19 @@ function renderFilters() {
 
         ...categories.map(
             (category) => `
+
                 <button
                     class="filter-btn"
                     data-category="${category}"
                     type="button"
                 >
-                    ${getShortCategoryName(category)}
+
+                    ${getShortCategoryName(
+                        category
+                    )}
+
                 </button>
+
             `
         )
 
@@ -112,7 +118,7 @@ function renderFilters() {
 
 
 /* =========================================
-   Short Category Names
+   Short Category Name
 ========================================= */
 
 function getShortCategoryName(
@@ -148,7 +154,7 @@ function getShortCategoryName(
 
 
 /* =========================================
-   Render Terms
+   Render Glossary
 ========================================= */
 
 function renderGlossary(
@@ -183,6 +189,8 @@ function renderGlossary(
     container.innerHTML = "";
 
 
+    /* Result Count */
+
     if (count) {
 
         count.textContent =
@@ -190,6 +198,8 @@ function renderGlossary(
 
     }
 
+
+    /* No Results */
 
     if (
         terms.length === 0
@@ -207,6 +217,8 @@ function renderGlossary(
     }
 
 
+    /* Hide Empty State */
+
     if (emptyState) {
 
         emptyState.hidden =
@@ -215,11 +227,15 @@ function renderGlossary(
     }
 
 
+    /* Render Cards */
+
     container.innerHTML =
         terms
             .map(
                 (term) =>
-                    createTermCard(term)
+                    createTermCard(
+                        term
+                    )
             )
             .join("");
 
@@ -227,7 +243,7 @@ function renderGlossary(
 
 
 /* =========================================
-   Create Term Card
+   Create Glossary Card
 ========================================= */
 
 function createTermCard(
@@ -338,7 +354,7 @@ function createTermCard(
 
 
 /* =========================================
-   Search
+   Search Initialization
 ========================================= */
 
 function initializeSearch() {
@@ -358,18 +374,25 @@ function initializeSearch() {
 
     searchInput.addEventListener(
         "input",
-        () => {
-
-            applyGlossaryFilters();
-
-        }
+        handleSearch
     );
 
 }
 
 
 /* =========================================
-   Filters
+   Search Handler
+========================================= */
+
+function handleSearch() {
+
+    applyGlossaryFilters();
+
+}
+
+
+/* =========================================
+   Filter Initialization
 ========================================= */
 
 function initializeFilters() {
@@ -405,23 +428,8 @@ function initializeFilters() {
             }
 
 
-            document
-                .querySelectorAll(
-                    ".filter-btn"
-                )
-                .forEach(
-                    (item) => {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-            button.classList.add(
-                "active"
+            setActiveFilter(
+                button
             );
 
 
@@ -434,7 +442,37 @@ function initializeFilters() {
 
 
 /* =========================================
-   Apply Search + Filter
+   Set Active Filter
+========================================= */
+
+function setActiveFilter(
+    activeButton
+) {
+
+    document
+        .querySelectorAll(
+            ".filter-btn"
+        )
+        .forEach(
+            (button) => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    activeButton.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =========================================
+   Apply Search + Category
 ========================================= */
 
 function applyGlossaryFilters() {
@@ -453,15 +491,15 @@ function applyGlossaryFilters() {
             : "";
 
 
-    const activeButton =
+    const activeFilter =
         document.querySelector(
             ".filter-btn.active"
         );
 
 
     const selectedCategory =
-        activeButton
-            ? activeButton.dataset.category
+        activeFilter
+            ? activeFilter.dataset.category
             : "All";
 
 
@@ -470,31 +508,52 @@ function applyGlossaryFilters() {
             (term) => {
 
 
-                const matchesCategory =
+                /* =========================
+                   Category Match
+                ========================== */
+
+                const categoryMatch =
                     selectedCategory === "All" ||
                     term.category ===
                         selectedCategory;
 
 
-                const searchableText =
-                    `
-                    ${term.term}
-                    ${term.category}
-                    ${term.definition}
-                    ${term.syntax}
-                    `.toLowerCase();
+                /* =========================
+                   Searchable Content
+                ========================== */
+
+                const searchableContent =
+                    [
+
+                        term.term,
+
+                        term.category,
+
+                        term.definition,
+
+                        term.syntax,
+
+                        term.example
+
+                    ]
+                    .join(" ")
+                    .toLowerCase();
 
 
-                const matchesSearch =
-                    !searchQuery ||
-                    searchableText.includes(
+                /* =========================
+                   Search Match
+                ========================== */
+
+                const searchMatch =
+                    searchQuery === "" ||
+                    searchableContent.includes(
                         searchQuery
                     );
 
 
                 return (
-                    matchesCategory &&
-                    matchesSearch
+                    categoryMatch &&
+                    searchMatch
                 );
 
             }
@@ -538,6 +597,10 @@ function initializeURLParameters() {
         );
 
 
+    /* =========================
+       Search Parameter
+    ========================== */
+
     if (
         search &&
         searchInput
@@ -549,6 +612,10 @@ function initializeURLParameters() {
     }
 
 
+    /* =========================
+       Category Parameter
+    ========================== */
+
     if (category) {
 
         const filterButton =
@@ -559,29 +626,18 @@ function initializeURLParameters() {
 
         if (filterButton) {
 
-            document
-                .querySelectorAll(
-                    ".filter-btn"
-                )
-                .forEach(
-                    (button) => {
-
-                        button.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-            filterButton.classList.add(
-                "active"
+            setActiveFilter(
+                filterButton
             );
 
         }
 
     }
 
+
+    /* =========================
+       Apply Parameters
+    ========================== */
 
     if (
         search ||
@@ -591,5 +647,42 @@ function initializeURLParameters() {
         applyGlossaryFilters();
 
     }
+
+}
+
+/* =========================================
+   Highlight Search Text
+========================================= */
+
+function highlightText(
+    text,
+    query
+) {
+
+    if (!query) {
+
+        return text;
+
+    }
+
+
+    const escapedQuery =
+        query.replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&"
+        );
+
+
+    const regex =
+        new RegExp(
+            `(${escapedQuery})`,
+            "gi"
+        );
+
+
+    return text.replace(
+        regex,
+        "<mark>$1</mark>"
+    );
 
 }
