@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Tech Glossary Hub - Explore technology terms, definitions, syntax, and examples."
+    >
+
+    <meta
+        name="author"
+        content="Charan Teja Epuri"
+    >
+
+    <title>Tech Glossary Hub</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Navbar
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-book-half me-2"></i>
+                Tech Glossary Hub
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavbar"
+            >
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="index.html"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#categories"
+                        >
+                            Categories
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#glossary"
+                        >
+                            Glossary
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#about"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                </ul>
+
+                <button
+                    class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0"
+                    id="themeToggle"
+                    type="button"
+                >
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         Hero Section
+    ========================== -->
+
+    <main>
+
+        <section class="hero-section">
+            <div class="container">
+
+                <div class="row align-items-center min-vh-75">
+
+                    <div class="col-lg-7">
+
+                        <span class="badge text-bg-primary mb-3">
+                            <i class="bi bi-code-slash me-1"></i>
+                            Developer Knowledge Hub
+                        </span>
+
+                        <h1 class="display-4 fw-bold">
+                            Explore Technology.
+                            <span class="text-primary">
+                                Understand Concepts.
+                            </span>
+                        </h1>
+
+                        <p class="lead text-secondary mt-4">
+                            Tech Glossary Hub is an interactive technology
+                            glossary covering web development, software
+                            engineering, data science, cybersecurity,
+                            cloud computing, and networking.
+                        </p>
+
+                        <!-- Search -->
+
+                        <div class="search-box mt-4">
+
+                            <div class="input-group input-group-lg">
+
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    id="searchInput"
+                                    placeholder="Search technology terms..."
+                                    aria-label="Search technology terms"
+                                >
+
+                                <button
+                                    class="btn btn-primary"
+                                    id="searchButton"
+                                >
+                                    Search
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+
+                        <div class="hero-card">
+
+                            <div class="hero-icon">
+                                <i class="bi bi-journal-code"></i>
+                            </div>
+
+                            <h3 class="fw-bold">
+                                Learn. Search. Explore.
+                            </h3>
+
+                            <p class="text-secondary mb-0">
+                                Discover technology concepts with
+                                simple definitions, syntax, and practical
+                                examples.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             Categories Section
+        ========================== -->
+
+        <section
+            id="categories"
+            class="section-padding"
+        >
+
+            <div class="container">
+
+                <div class="text-center mb-5">
+
+                    <span class="text-primary fw-semibold">
+                        EXPLORE
+                    </span>
+
+                    <h2 class="fw-bold mt-2">
+                        Technology Categories
+                    </h2>
+
+                    <p class="text-secondary">
+                        Explore concepts across five major technology
+                        domains.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+                    <!-- Category 1 -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="category-card h-100">
+
+                            <div class="category-icon">
+                                <i class="bi bi-globe2"></i>
+                            </div>
+
+                            <h4>
+                                Web Development & Design
+                            </h4>
+
+                            <p>
+                                Explore HTML, CSS, JavaScript,
+                                responsive design, APIs, and web
+                                technologies.
+                            </p>
+
+                            <span class="category-count">
+                                15 Terms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Category 2 -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="category-card h-100">
+
+                            <div class="category-icon">
+                                <i class="bi bi-code-square"></i>
+                            </div>
+
+                            <h4>
+                                Software Engineering
+                            </h4>
+
+                            <p>
+                                Learn software development practices,
+                                Git, testing, Agile, CI/CD, and more.
+                            </p>
+
+                            <span class="category-count">
+                                15 Terms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Category 3 -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="category-card h-100">
+
+                            <div class="category-icon">
+                                <i class="bi bi-robot"></i>
+                            </div>
+
+                            <h4>
+                                Data Science & AI
+                            </h4>
+
+                            <p>
+                                Understand machine learning, AI,
+                                datasets, neural networks, and NLP.
+                            </p>
+
+                            <span class="category-count">
+                                15 Terms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Category 4 -->
+
+                    <div class="col-md-6 col-lg-6">
+
+                        <div class="category-card h-100">
+
+                            <div class="category-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+
+                            <h4>
+                                Cybersecurity
+                            </h4>
+
+                            <p>
+                                Explore encryption, authentication,
+                                malware, phishing, firewalls,
+                                and common security concepts.
+                            </p>
+
+                            <span class="category-count">
+                                15 Terms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Category 5 -->
+
+                    <div class="col-md-6 col-lg-6">
+
+                        <div class="category-card h-100">
+
+                            <div class="category-icon">
+                                <i class="bi bi-cloud"></i>
+                            </div>
+
+                            <h4>
+                                Cloud & Networking
+                            </h4>
+
+                            <p>
+                                Learn cloud computing, Docker,
+                                Kubernetes, DNS, IP addresses,
+                                networking, and cloud platforms.
+                            </p>
+
+                            <span class="category-count">
+                                15 Terms
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Glossary Preview
+        ========================== -->
+
+        <section
+            id="glossary"
+            class="section-padding glossary-preview"
+        >
+
+            <div class="container">
+
+                <div class="text-center">
+
+                    <span class="text-primary fw-semibold">
+                        GLOSSARY
+                    </span>
+
+                    <h2 class="fw-bold mt-2">
+                        Start Exploring
+                    </h2>
+
+                    <p class="text-secondary">
+                        Search and explore technology terms with
+                        clear explanations and examples.
+                    </p>
+
+                    <button
+                        class="btn btn-primary btn-lg mt-3"
+                        id="exploreGlossary"
+                    >
+                        Explore Glossary
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer
+        id="about"
+        class="footer-section"
+    >
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+
+                    <h5 class="fw-bold">
+                        <i class="bi bi-book-half me-2"></i>
+                        Tech Glossary Hub
+                    </h5>
+
+                    <p class="text-secondary mb-0">
+                        A simple and interactive platform for
+                        understanding technology concepts.
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 text-md-end">
+
+                    <p class="mb-1">
+                        Built with
+                        <strong>HTML, CSS, JavaScript & Bootstrap</strong>
+                    </p>
+
+                    <p class="text-secondary mb-0">
+                        © 2026 Tech Glossary Hub
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
