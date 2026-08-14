@@ -1,0 +1,701 @@
+/* =========================================
+   Tech Glossary Hub
+   Footer
+========================================= */
+
+
+/* =========================================
+   Footer Container
+========================================= */
+
+.site-footer {
+
+    position: relative;
+
+    padding: 4.5rem 0 0;
+
+    background:
+        var(--footer-bg);
+
+    border-top:
+        1px solid
+        var(--border-color);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   Spider-Man Top Accent
+========================================= */
+
+.site-footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 180px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--primary-color),
+            var(--accent-color),
+            var(--primary-color),
+            transparent
+        );
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+/* =========================================
+   Footer Brand / Project Header
+========================================= */
+
+.footer-project-header {
+
+    position: relative;
+
+    padding-bottom: 3rem;
+
+    text-align: center;
+
+}
+
+
+.footer-project-header h2 {
+
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(
+            1.6rem,
+            4vw,
+            2.2rem
+        );
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.02em;
+
+}
+
+
+.footer-project-header h2 span {
+
+    color:
+        var(--primary-color);
+
+}
+
+
+.footer-project-tagline {
+
+    max-width: 600px;
+
+    margin:
+        0.75rem auto 0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================
+   Footer Main Content
+========================================= */
+
+.footer-main {
+
+    padding:
+        3rem 0;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+}
+
+
+/* =========================================
+   Footer Columns
+========================================= */
+
+.footer-column {
+
+    height: 100%;
+
+}
+
+
+.footer-column h5 {
+
+    position: relative;
+
+    margin:
+        0 0 1.25rem;
+
+    padding-bottom:
+        0.7rem;
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        0.02em;
+
+}
+
+
+.footer-column h5::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 28px;
+
+    height: 2px;
+
+    background:
+        var(--primary-color);
+
+}
+
+
+/* =========================================
+   About
+========================================= */
+
+.footer-about-text {
+
+    margin:
+        0 0 1rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.82rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+.footer-copyright {
+
+    margin:
+        0 0 1.25rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        600;
+
+}
+
+
+.footer-built-with {
+
+    margin:
+        0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+.footer-built-with strong {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+}
+
+
+/* =========================================
+   Footer Links
+========================================= */
+
+.footer-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.65rem;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+.footer-links li {
+
+    margin:
+        0;
+
+}
+
+
+.footer-links a {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        0.45rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.8rem;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.footer-links a:hover {
+
+    color:
+        var(--primary-color);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.footer-links a i {
+
+    font-size:
+        0.7rem;
+
+}
+
+
+/* =========================================
+   Project Links
+========================================= */
+
+.footer-project-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.7rem;
+
+}
+
+
+.footer-project-link {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        0.65rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        1.5;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.footer-project-link:hover {
+
+    color:
+        var(--accent-color);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.footer-project-link i {
+
+    flex-shrink: 0;
+
+    margin-top:
+        0.15rem;
+
+    color:
+        var(--primary-color);
+
+}
+
+
+/* =========================================
+   Social / Connect
+========================================= */
+
+.footer-social-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.65rem;
+
+    margin-bottom:
+        1.75rem;
+
+}
+
+
+.footer-social-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        0.65rem;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.8rem;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.footer-social-link:hover {
+
+    color:
+        #ffffff;
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.footer-social-link i {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+
+    border-radius:
+        7px;
+
+    color:
+        var(--accent-color);
+
+}
+
+
+/* =========================================
+   Explore Portfolio
+========================================= */
+
+.footer-portfolio {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:
+        0.45rem 1rem;
+
+}
+
+
+.footer-portfolio a {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    font-size:
+        0.76rem;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+.footer-portfolio a:hover {
+
+    color:
+        var(--primary-color);
+
+}
+
+
+/* =========================================
+   Footer Divider
+========================================= */
+
+.footer-divider {
+
+    margin:
+        0;
+
+    border:
+        0;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================
+   Footer Bottom
+========================================= */
+
+.footer-bottom {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        85px;
+
+    padding:
+        1.25rem 0;
+
+    text-align:
+        center;
+
+}
+
+
+.footer-made-with {
+
+    margin:
+        0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size:
+        0.82rem;
+
+}
+
+
+.footer-made-with .heart {
+
+    color:
+        var(--primary-color);
+
+    font-size:
+        1rem;
+
+}
+
+
+.footer-made-with strong {
+
+    color:
+        #ffffff;
+
+    font-weight:
+        700;
+
+}

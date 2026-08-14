@@ -1,0 +1,454 @@
+/* =========================================
+   Custom 404 Page
+========================================= */
+
+.error-page {
+
+    position:
+        relative;
+
+    min-height:
+        75vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        5rem 0;
+
+    background:
+        var(--bg-primary);
+
+    overflow:
+        hidden;
+
+}
+
+
+.error-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================
+   404 Number
+========================================= */
+
+.error-number {
+
+    margin-bottom:
+        -1rem;
+
+    color:
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    font-size:
+        clamp(
+            8rem,
+            25vw,
+            16rem
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        -0.08em;
+
+}
+
+
+/* =========================================
+   Icon
+========================================= */
+
+.error-icon {
+
+    position:
+        relative;
+
+    width:
+        75px;
+
+    height:
+        75px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin:
+        -2rem auto 1.5rem;
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    border-radius:
+        20px;
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--primary-color);
+
+    font-size:
+        1.8rem;
+
+    box-shadow:
+        0 0 35px
+        var(--primary-shadow);
+
+}
+
+
+.error-label {
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.12em;
+
+}
+
+
+.error-content h1 {
+
+    margin:
+        0.7rem 0 1rem;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.8rem
+        );
+
+    font-weight:
+        850;
+
+}
+
+
+.error-content p {
+
+    max-width:
+        550px;
+
+    margin:
+        0 auto 2rem;
+
+    color:
+        var(--text-secondary);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================
+   Buttons
+========================================= */
+
+.error-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        0.8rem;
+
+}
+
+
+.error-primary-button,
+.error-secondary-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        0.5rem;
+
+    padding:
+        0.75rem 1.1rem;
+
+    border-radius:
+        10px;
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.error-primary-button {
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    background:
+        var(--primary-color);
+
+    color:
+        #ffffff;
+
+}
+
+
+.error-primary-button:hover {
+
+    background:
+        var(--primary-hover);
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.error-secondary-button {
+
+    border:
+        1px solid
+        var(--border-color);
+
+    background:
+        var(--bg-secondary);
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+.error-secondary-button:hover {
+
+    border-color:
+        var(--primary-color);
+
+    color:
+        var(--text-primary);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================
+   Spider Web
+========================================= */
+
+.error-web {
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    pointer-events:
+        none;
+
+    opacity:
+        0.5;
+
+}
+
+
+.error-web::before,
+.error-web::after,
+.error-web span {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    border:
+        1px solid
+        rgba(
+            225,
+            6,
+            0,
+            0.08
+        );
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+}
+
+
+.error-web::after {
+
+    width:
+        75%;
+
+    height:
+        75%;
+
+    border-color:
+        rgba(
+            51,
+            153,
+            255,
+            0.08
+        );
+
+}
+
+
+.error-web span:nth-child(1) {
+
+    width:
+        50%;
+
+    height:
+        50%;
+
+}
+
+
+.error-web span:nth-child(2) {
+
+    width:
+        25%;
+
+    height:
+        25%;
+
+    border-color:
+        rgba(
+            225,
+            6,
+            0,
+            0.1
+        );
+
+}
+
+
+.error-web span:nth-child(3) {
+
+    width:
+        10%;
+
+    height:
+        10%;
+
+    border-color:
+        rgba(
+            51,
+            153,
+            255,
+            0.1
+        );
+
+}

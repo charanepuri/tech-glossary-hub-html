@@ -1,0 +1,290 @@
+/* =========================================
+   Global Base Styles
+========================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        var(--bg-primary);
+
+    color:
+        var(--text-primary);
+
+    font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    transition:
+        background-color
+        var(--transition-speed)
+        ease,
+
+        color
+        var(--transition-speed)
+        ease;
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+
+::selection {
+
+    background:
+        var(--primary-color);
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================
+   Scrollbar
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--bg-primary);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        var(--border-hover);
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--primary-color);
+
+}
+
+
+/* =========================================
+   Shared Section Styles
+========================================= */
+
+.section-padding {
+
+    padding:
+        6rem 0;
+
+}
+
+
+.section-heading {
+
+    margin-bottom:
+        3rem;
+
+    text-align: center;
+
+}
+
+
+.section-heading > span {
+
+    color:
+        var(--primary-color);
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top:
+        0.6rem;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.5rem
+        );
+
+    font-weight:
+        800;
+
+}
+
+
+.section-heading p {
+
+    max-width:
+        620px;
+
+    margin:
+        0.75rem auto 0;
+
+    color:
+        var(--text-secondary);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================
+   Shared Buttons
+========================================= */
+
+.btn-spider {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        0.5rem;
+
+    padding:
+        0.75rem 1.2rem;
+
+    border:
+        1px solid
+        var(--primary-color);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--primary-color);
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        700;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.btn-spider:hover {
+
+    background:
+        var(--primary-hover);
+
+    border-color:
+        var(--primary-hover);
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================
+   Shared Web Decoration
+========================================= */
+
+.web-decoration {
+
+    position:
+        absolute;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}

@@ -1,0 +1,139 @@
+/* =========================================
+   Tech Glossary Hub
+   Theme Variables
+========================================= */
+
+:root {
+
+    /* =====================================
+       Backgrounds
+    ====================================== */
+
+    --bg-primary: #080b10;
+
+    --bg-secondary: #0d1117;
+
+    --bg-tertiary: #111722;
+
+    --bg-code: #05070a;
+
+
+    /* =====================================
+       Spider-Man Colors
+    ====================================== */
+
+    --primary-color: #e10600;
+
+    --primary-hover: #ff1711;
+
+    --accent-color: #3399ff;
+
+    --accent-dark: #0066cc;
+
+
+    /* =====================================
+       Text
+    ====================================== */
+
+    --text-primary: #ffffff;
+
+    --text-secondary: #a4afbf;
+
+    --text-muted: #8491a5;
+
+
+    /* =====================================
+       Borders
+    ====================================== */
+
+    --border-color: #202938;
+
+    --border-hover: #334155;
+
+
+    /* =====================================
+       Navbar / Footer
+    ====================================== */
+
+    --navbar-bg: #05070a;
+
+    --footer-bg: #05070a;
+
+
+    /* =====================================
+       Shadows
+    ====================================== */
+
+    --shadow-color:
+        rgba(0, 0, 0, 0.25);
+
+    --shadow-sm:
+        0 4px 15px rgba(0, 0, 0, 0.18);
+
+    --shadow-md:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+
+    --primary-shadow:
+        rgba(225, 6, 0, 0.2);
+
+
+    /* =====================================
+       Transitions
+    ====================================== */
+
+    --transition-speed: 0.3s;
+
+    --transition:
+        all 0.3s ease;
+
+}
+
+
+/* =========================================
+   Light Theme
+========================================= */
+
+body[data-theme="light"] {
+
+    --bg-primary: #f4f7fb;
+
+    --bg-secondary: #ffffff;
+
+    --bg-tertiary: #eef2f7;
+
+    --bg-code: #f1f5f9;
+
+
+    --text-primary: #111827;
+
+    --text-secondary: #475569;
+
+    --text-muted: #64748b;
+
+
+    --border-color: #dbe2ea;
+
+    --border-hover: #b8c4d1;
+
+
+    --navbar-bg: #101828;
+
+    --footer-bg: #101828;
+
+
+    --primary-color: #d90400;
+
+    --primary-hover: #b80300;
+
+    --accent-color: #0066cc;
+
+    --accent-dark: #0052a3;
+
+
+    --shadow-color:
+        rgba(15, 23, 42, 0.1);
+
+    --primary-shadow:
+        rgba(217, 4, 0, 0.15);
+
+}
