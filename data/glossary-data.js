@@ -184,6 +184,66 @@ const glossaryData = [
             "<button aria-label=\"Close\">×</button>"
     },
 
+    {
+    id: "semantic-html",
+    term: "Semantic HTML",
+    category: "Web Development & Design",
+    definition:
+        "Semantic HTML uses meaningful HTML elements to clearly describe the structure and purpose of content.",
+    syntax:
+        "<element>Content</element>",
+    example:
+        "<article><h2>Technology</h2><p>Latest tech news.</p></article>"
+},
+
+{
+    id: "tailwind-css",
+    term: "Tailwind CSS",
+    category: "Web Development & Design",
+    definition:
+        "Tailwind CSS is a utility-first CSS framework used to build custom user interfaces directly in HTML.",
+    syntax:
+        "<element class=\"utility-class\">Content</element>",
+    example:
+        "<button class=\"bg-blue-500 text-white px-4 py-2\">Click</button>"
+},
+
+{
+    id: "frontend",
+    term: "Frontend",
+    category: "Web Development & Design",
+    definition:
+        "Frontend refers to the part of a web application that users see and interact with in their browser.",
+    syntax:
+        "HTML + CSS + JavaScript → User Interface",
+    example:
+        "A login page containing a form, buttons, and navigation."
+},
+
+{
+    id: "backend",
+    term: "Backend",
+    category: "Web Development & Design",
+    definition:
+        "Backend refers to the server-side part of an application that handles business logic, databases, authentication, and APIs.",
+    syntax:
+        "Client → Server → Database",
+    example:
+        "A backend API validating user credentials and returning account data."
+},
+
+{
+    id: "websocket",
+    term: "WebSocket",
+    category: "Web Development & Design",
+    definition:
+        "WebSocket is a communication protocol that provides a persistent connection for real-time data exchange between clients and servers.",
+    syntax:
+        "Client ↔ WebSocket Server",
+    example:
+        "A chat application receiving new messages in real time."
+},
+
 
     /* =========================================
        2. SOFTWARE ENGINEERING
@@ -370,6 +430,66 @@ const glossaryData = [
     },
 
 
+    {
+    id: "software-architecture",
+    term: "Software Architecture",
+    category: "Software Engineering",
+    definition:
+        "Software architecture describes the high-level structure, components, relationships, and design decisions of a software system.",
+    syntax:
+        "Components → Relationships → System Architecture",
+    example:
+        "Designing a web application using frontend, backend, and database layers."
+},
+
+{
+    id: "design-pattern",
+    term: "Design Pattern",
+    category: "Software Engineering",
+    definition:
+        "A design pattern is a reusable solution to a commonly occurring software design problem.",
+    syntax:
+        "Problem → Pattern → Reusable Solution",
+    example:
+        "Using the Singleton pattern to ensure only one instance of a class exists."
+},
+
+{
+    id: "code-review",
+    term: "Code Review",
+    category: "Software Engineering",
+    definition:
+        "Code review is the process of examining source code to identify bugs, improve quality, and maintain coding standards.",
+    syntax:
+        "Code → Review → Feedback → Improvements",
+    example:
+        "A developer reviews a pull request before it is merged into the main branch."
+},
+
+{
+    id: "refactoring",
+    term: "Refactoring",
+    category: "Software Engineering",
+    definition:
+        "Refactoring is the process of improving the internal structure of code without changing its external behavior.",
+    syntax:
+        "Existing Code → Restructure → Same Behavior",
+    example:
+        "Breaking a large function into smaller reusable functions."
+},
+
+{
+    id: "software-maintenance",
+    term: "Software Maintenance",
+    category: "Software Engineering",
+    definition:
+        "Software maintenance involves modifying software after release to fix issues, improve performance, or add enhancements.",
+    syntax:
+        "Released Software → Updates → Improved Software",
+    example:
+        "Updating an application to fix a security vulnerability."
+},
+
     /* =========================================
        3. DATA SCIENCE & AI
     ========================================== */
@@ -554,6 +674,65 @@ const glossaryData = [
             "An AI model generating Python code from a natural-language prompt."
     },
 
+    {
+    id: "supervised-learning",
+    term: "Supervised Learning",
+    category: "Data Science & AI",
+    definition:
+        "Supervised learning trains a machine learning model using labeled data containing inputs and their expected outputs.",
+    syntax:
+        "Labeled Data → Training → Model → Prediction",
+    example:
+        "Training a model using labeled emails to identify spam messages."
+},
+
+{
+    id: "unsupervised-learning",
+    term: "Unsupervised Learning",
+    category: "Data Science & AI",
+    definition:
+        "Unsupervised learning discovers patterns or structures in data without predefined labels.",
+    syntax:
+        "Unlabeled Data → Algorithm → Patterns",
+    example:
+        "Grouping customers into segments based on their behavior."
+},
+
+{
+    id: "large-language-model",
+    term: "Large Language Model",
+    category: "Data Science & AI",
+    definition:
+        "A Large Language Model is an AI model trained on large amounts of text to understand and generate human-like language.",
+    syntax:
+        "Text Input → LLM → Generated Text",
+    example:
+        "An AI assistant generating an explanation from a user's question."
+},
+
+{
+    id: "computer-vision",
+    term: "Computer Vision",
+    category: "Data Science & AI",
+    definition:
+        "Computer vision is an AI field that enables computers to interpret and understand information from images and videos.",
+    syntax:
+        "Image / Video → Vision Model → Interpretation",
+    example:
+        "Detecting objects in an image using a computer vision model."
+},
+
+{
+    id: "model-evaluation",
+    term: "Model Evaluation",
+    category: "Data Science & AI",
+    definition:
+        "Model evaluation measures how well a machine learning model performs using appropriate metrics and test data.",
+    syntax:
+        "Model + Test Data → Metrics → Performance",
+    example:
+        "Evaluating a classification model using accuracy and precision."
+},
 
     /* =========================================
        4. CYBERSECURITY
@@ -739,6 +918,65 @@ const glossaryData = [
             "Signing a software release to verify its publisher."
     },
 
+    {
+    id: "brute-force-attack",
+    term: "Brute Force Attack",
+    category: "Cybersecurity",
+    definition:
+        "A brute force attack attempts to gain unauthorized access by repeatedly trying different passwords or credentials.",
+    syntax:
+        "Multiple Credential Attempts → Authentication System",
+    example:
+        "Repeatedly attempting different passwords against a login page."
+},
+
+{
+    id: "social-engineering",
+    term: "Social Engineering",
+    category: "Cybersecurity",
+    definition:
+        "Social engineering manipulates people into revealing confidential information or performing unsafe actions.",
+    syntax:
+        "Manipulation → User Action → Information / Access",
+    example:
+        "An attacker pretending to be technical support and asking for account information."
+},
+
+{
+    id: "penetration-testing",
+    term: "Penetration Testing",
+    category: "Cybersecurity",
+    definition:
+        "Penetration testing is an authorized security assessment that identifies vulnerabilities by simulating controlled attacks.",
+    syntax:
+        "Target → Security Testing → Vulnerabilities → Report",
+    example:
+        "A security team tests a web application for common vulnerabilities."
+},
+
+{
+    id: "security-patch",
+    term: "Security Patch",
+    category: "Cybersecurity",
+    definition:
+        "A security patch is a software update designed to fix known security vulnerabilities.",
+    syntax:
+        "Vulnerability → Patch → Updated Software",
+    example:
+        "Installing an operating system update that fixes a known security issue."
+},
+
+{
+    id: "zero-day",
+    term: "Zero-Day Vulnerability",
+    category: "Cybersecurity",
+    definition:
+        "A zero-day vulnerability is a previously unknown or unpatched security weakness that can potentially be exploited.",
+    syntax:
+        "Unknown Vulnerability → Exploit → Security Risk",
+    example:
+        "A newly discovered vulnerability affecting an application before a patch is available."
+},
 
     /* =========================================
        5. CLOUD & NETWORKING
@@ -922,6 +1160,66 @@ const glossaryData = [
             "Client → Load Balancer → Server Pool",
         example:
             "Distributing web requests across three application servers."
+    },
+
+    {
+        id: "google-cloud",
+        term: "Google Cloud",
+        category: "Cloud & Networking",
+        definition:
+            "Google Cloud is a cloud computing platform providing services for computing, storage, databases, networking, and AI.",
+        syntax:
+            "Application → Google Cloud Service → Resource",
+        example:
+            "Deploying an application using Google Cloud services."
+    },
+
+    {
+        id: "cloud-storage",
+        term: "Cloud Storage",
+        category: "Cloud & Networking",
+        definition:
+            "Cloud storage is a service that stores data on remote infrastructure accessible through a network or the internet.",
+        syntax:
+            "Data → Cloud Storage → Remote Access",
+        example:
+            "Storing application images and documents in cloud storage."
+    },
+
+    {
+        id: "cdn",
+        term: "CDN",
+        category: "Cloud & Networking",
+        definition:
+            "A Content Delivery Network distributes cached content through geographically distributed servers to improve delivery speed.",
+        syntax:
+            "User → Nearest CDN Server → Content",
+        example:
+            "Serving website images from a CDN located near the user."
+    },
+
+    {
+        id: "subnet",
+        term: "Subnet",
+        category: "Cloud & Networking",
+        definition:
+            "A subnet is a logical subdivision of an IP network used to organize and manage network resources.",
+        syntax:
+            "Network → Subnet → Devices",
+        example:
+            "Creating separate subnets for application servers and databases."
+    },
+
+    {
+        id: "proxy-server",
+        term: "Proxy Server",
+        category: "Cloud & Networking",
+        definition:
+            "A proxy server acts as an intermediary between a client and another server when handling network requests.",
+        syntax:
+            "Client → Proxy → Destination Server",
+        example:
+            "A company routing employee web requests through a proxy server."
     }
 
 ];

@@ -349,6 +349,35 @@
             border-radius: 12px;
         }
 
+        .preview-notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(251, 146, 60, 0.35);
+            border-radius: 10px;
+            background: rgba(251, 146, 60, 0.1);
+            color: #fdba74;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .preview-notice i {
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+            color: #fb923c;
+        }
+
+        .preview-notice a {
+            color: #fed7aa;
+            font-weight: 700;
+        }
+
+        .preview-notice a:hover {
+            color: #ffffff;
+        }
+
         /* =========================================
            Version Details
         ========================================= */
@@ -1264,6 +1293,23 @@
                     </div>
 
 
+                    <p class="preview-notice">
+
+                        <i class="bi bi-info-circle-fill"></i>
+
+                        This Django version may not load in the preview here. Please visit the
+                        <a
+                            href="https://tech-glossary-hub.onrender.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            live project link below
+                        </a>
+                        to open it directly.
+
+                    </p>
+
+
                     <div class="iframe-wrapper">
 
                         <iframe
@@ -1815,7 +1861,7 @@
 
                                 <li>
 
-                                    <a href="#">
+                                    <a href="../assets/TECHGLOSSARYHUBHTML.pdf" target="_blank" rel="noopener noreferrer">
 
                                         <i
                                             class="bi bi-file-earmark-text"
@@ -1828,7 +1874,7 @@
                                 </li>
 
 
-                                <li>
+                                <!-- <li>
 
                                     <a href="#">
 
@@ -1840,7 +1886,7 @@
 
                                     </a>
 
-                                </li>
+                                </li> -->
 
 
                             </ul>
