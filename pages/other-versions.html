@@ -12,7 +12,7 @@
 
     <meta
         name="description"
-        content="Explore all versions of Tech Glossary Hub built using HTML, React, Django, Angular and Flask."
+        content="Explore the different Tech Glossary Hub versions built with HTML, React, Django, Angular and Flask."
     >
 
     <meta
@@ -20,33 +20,608 @@
         content="Epuri Charan Teja"
     >
 
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0f14"
+    >
+
+    <meta
+        name="application-name"
+        content="Tech Glossary Hub"
+    >
+
+    <meta
+        name="color-scheme"
+        content="dark light"
+    >
+
+<link rel="icon" type="image/svg+xml" href="../assets/icons/tgh_html_logo.png">
+
+    <link
+        rel="canonical"
+        href="https://charanepuri.github.io/tech-glossary-hub-html/pages/other-versions.html"
+    >
+
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Other Versions | Tech Glossary Hub"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore Tech Glossary Hub versions built using different technologies and frameworks."
+    >
+
+    <meta
+        property="og:url"
+        content="https://charanepuri.github.io/tech-glossary-hub-html/pages/other-versions.html"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Tech Glossary Hub"
+    >
+
+
     <title>
         Other Versions | Tech Glossary Hub
     </title>
 
-
-    <!-- Bootstrap -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-
-    <!-- Bootstrap Icons -->
-
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     >
 
-
-    <!-- Main CSS -->
-
     <link
         rel="stylesheet"
         href="../css/style.css"
     >
+
+    <style>
+        /* =========================================
+           Other Versions Page Styles
+        ========================================= */
+
+        /* =========================================
+           Versions Header
+        ========================================= */
+        .versions-header {
+            position: relative;
+            padding: 5rem 0 4rem;
+            background: radial-gradient(circle at 50% 0%, rgba(225, 6, 0, 0.15), transparent 45%), #05070a;
+            border-bottom: 1px solid #202938;
+            overflow: hidden;
+        }
+
+        .versions-header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .versions-header .text-center {
+            position: relative;
+            z-index: 1;
+        }
+
+        .versions-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 50px;
+            background: rgba(225, 6, 0, 0.1);
+            border: 1px solid rgba(225, 6, 0, 0.25);
+            color: #ff4b45;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .versions-header h1 {
+            position: relative;
+            margin-top: 1.25rem;
+            color: #ffffff;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 800;
+        }
+
+        .versions-header p {
+            position: relative;
+            max-width: 650px;
+            margin: 1rem auto 0;
+            color: #8491a5;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           Versions Page Main
+        ========================================= */
+        .versions-page {
+            min-height: 70vh;
+            padding: 4rem 0;
+            background: #080b10;
+        }
+
+        /* =========================================
+           Version Cards
+        ========================================= */
+        .version-card {
+            margin-bottom: 3rem;
+            border: 1px solid #202938;
+            border-radius: 20px;
+            background: #0d1117;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .version-card:hover {
+            border-color: #344154;
+            box-shadow: 0 20px 50px rgba(225, 6, 0, 0.1);
+        }
+
+        /* =========================================
+           Version Card Header
+        ========================================= */
+        .version-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.5rem;
+            border-bottom: 1px solid #202938;
+            background: linear-gradient(135deg, rgba(13, 17, 23, 0.8), rgba(17, 23, 34, 0.8));
+        }
+
+        .version-title {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+        }
+
+        .version-icon {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: rgba(225, 6, 0, 0.1);
+            color: #e10600;
+            font-size: 2.2rem;
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        .version-icon.react {
+            background: rgba(97, 218, 251, 0.1);
+            color: #61dafb;
+            border-color: rgba(97, 218, 251, 0.3);
+        }
+
+        .version-icon.django {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .version-icon.angular {
+            background: rgba(244, 63, 94, 0.1);
+            color: #f43f5e;
+            border-color: rgba(244, 63, 94, 0.3);
+        }
+
+        .version-icon.flask {
+            background: rgba(251, 146, 60, 0.1);
+            color: #fb923c;
+            border-color: rgba(251, 146, 60, 0.3);
+        }
+
+        .version-label {
+            display: inline-block;
+            color: #3399ff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .version-title h2 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+
+        .version-title p {
+            color: #8491a5;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .version-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .version-status.coming {
+            background: rgba(251, 146, 60, 0.15);
+            border-color: rgba(251, 146, 60, 0.3);
+            color: #fb923c;
+        }
+
+        /* =========================================
+           Version Preview
+        ========================================= */
+        .version-preview {
+            padding: 1.5rem;
+            background: #05070a;
+            border-bottom: 1px solid #202938;
+        }
+
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #202938;
+        }
+
+        .preview-header span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8491a5;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .preview-header a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(225, 6, 0, 0.1);
+            color: #e10600;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        .preview-header a:hover {
+            background: rgba(225, 6, 0, 0.25);
+            border-color: #e10600;
+            color: #ff1711;
+        }
+
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #080b10;
+            border: 1px solid #202938;
+        }
+
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* =========================================
+           Version Details
+        ========================================= */
+        .version-details {
+            padding: 2rem;
+        }
+
+        .version-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #202938;
+            margin-bottom: 1.5rem;
+        }
+
+        .version-meta span {
+            color: #8491a5;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .version-meta strong {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .version-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .version-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1rem;
+            border: 1px solid #263244;
+            border-radius: 10px;
+            background: transparent;
+            color: #8491a5;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .version-link:hover {
+            border-color: #e10600;
+            color: #ffffff;
+            background: rgba(225, 6, 0, 0.1);
+        }
+
+        .version-link.primary {
+            border-color: #e10600;
+            background: #e10600;
+            color: #ffffff;
+        }
+
+        .version-link.primary:hover {
+            background: #ff1711;
+            border-color: #ff1711;
+            box-shadow: 0 8px 16px rgba(225, 6, 0, 0.25);
+        }
+
+        .version-link.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .version-link.disabled:hover {
+            border-color: #263244;
+            background: transparent;
+            color: #8491a5;
+        }
+
+        /* =========================================
+           Coming Soon Card
+        ========================================= */
+        .coming-soon-card {
+            opacity: 0.85;
+        }
+
+        .version-coming-soon {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(251, 146, 60, 0.05);
+            border-top: 1px solid #202938;
+            border-bottom: 1px solid #202938;
+        }
+
+        .coming-soon-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: rgba(251, 146, 60, 0.15);
+            color: #fb923c;
+            font-size: 2rem;
+            border: 2px solid rgba(251, 146, 60, 0.3);
+        }
+
+        .version-coming-soon h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .version-coming-soon p {
+            color: #8491a5;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* =========================================
+           Responsive
+        ========================================= */
+        @media (max-width: 991px) {
+            .version-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .version-title {
+                width: 100%;
+            }
+
+            .version-status {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .versions-header {
+                padding: 3.5rem 0 3rem;
+            }
+
+            .versions-page {
+                padding: 2rem 0;
+            }
+
+            .versions-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .version-card-header {
+                padding: 1.5rem;
+            }
+
+            .version-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+
+            .version-title h2 {
+                font-size: 1.3rem;
+            }
+
+            .version-preview {
+                padding: 1rem;
+            }
+
+            .preview-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .preview-header a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .version-details {
+                padding: 1.5rem;
+            }
+
+            .version-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .version-links {
+                gap: 0.6rem;
+            }
+
+            .version-link {
+                flex: 1;
+                min-width: calc(50% - 0.3rem);
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .versions-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .version-card {
+                margin-bottom: 2rem;
+                border-radius: 16px;
+            }
+
+            .version-card-header {
+                padding: 1.25rem;
+            }
+
+            .version-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .version-title h2 {
+                font-size: 1.1rem;
+            }
+
+            .version-title p {
+                font-size: 0.8rem;
+            }
+
+            .version-status {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.7rem;
+            }
+
+            .version-details {
+                padding: 1rem;
+            }
+
+            .version-meta {
+                font-size: 0.8rem;
+            }
+
+            .version-links {
+                gap: 0.5rem;
+            }
+
+            .version-link {
+                min-width: calc(50% - 0.25rem);
+                padding: 0.5rem 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .version-link i {
+                display: none;
+            }
+
+            .coming-soon-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5rem;
+            }
+
+            .version-coming-soon {
+                padding: 2.5rem 1rem;
+            }
+
+            .version-coming-soon h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 
 </head>
 

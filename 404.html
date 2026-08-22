@@ -11,32 +11,59 @@
     >
 
     <meta
+        name="description"
+        content="The requested page could not be found on Tech Glossary Hub."
+    >
+
+    <meta
+        name="author"
+        content="Epuri Charan Teja"
+    >
+
+    <meta
         name="robots"
-        content="noindex"
+        content="noindex, nofollow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b0f14"
+    >
+
+    <meta
+        name="application-name"
+        content="Tech Glossary Hub"
+    >
+
+    <meta
+        name="color-scheme"
+        content="dark light"
+    >
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/icons/tgh_html_logo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/icons/favicon.svg"
     >
 
     <title>
-        404 | Tech Glossary Hub
+        Page Not Found | Tech Glossary Hub
     </title>
-
-
-    <!-- Bootstrap CSS -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-
-    <!-- Bootstrap Icons -->
-
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     >
-
-
-    <!-- Custom CSS -->
 
     <link
         rel="stylesheet"
@@ -45,460 +72,419 @@
 
     <style>
         /* =========================================
-   Custom 404 Page
-========================================= */
-
-.error-page {
-
-    position: relative;
-
-    min-height: 75vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 5rem 0;
-
-    background:
-        var(--bg-primary);
-
-    overflow: hidden;
-
-}
-
-
-.error-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    text-align: center;
-
-}
-
-
-/* =========================================
-   404 Number
-========================================= */
-
-.error-number {
-
-    margin-bottom: -1rem;
-
-    color:
-        rgba(
-            225,
-            6,
-            0,
-            0.08
-        );
-
-    font-size:
-        clamp(
-            8rem,
-            25vw,
-            16rem
-        );
-
-    font-weight: 950;
-
-    line-height: 0.9;
-
-    letter-spacing: -0.08em;
-
-}
-
-
-/* =========================================
-   Error Icon
-========================================= */
-
-.error-icon {
-
-    position: relative;
-
-    width: 75px;
-
-    height: 75px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin:
-        -2rem auto 1.5rem;
-
-    border:
-        1px solid
-        var(--primary-color);
-
-    border-radius: 20px;
-
-    background:
-        var(--bg-secondary);
-
-    color:
-        var(--primary-color);
-
-    font-size: 1.8rem;
-
-    box-shadow:
-        0 0 35px
-        var(--primary-shadow);
-
-}
-
-
-.error-label {
-
-    color:
-        var(--accent-color);
-
-    font-size: 0.7rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.12em;
-
-}
-
-
-.error-content h1 {
-
-    margin:
-        0.7rem 0 1rem;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        clamp(
-            1.8rem,
-            4vw,
-            2.8rem
-        );
-
-    font-weight: 850;
-
-}
-
-
-.error-content p {
-
-    max-width: 550px;
-
-    margin:
-        0 auto 2rem;
-
-    color:
-        var(--text-secondary);
-
-    line-height: 1.8;
-
-}
-
-
-/* =========================================
-   Error Buttons
-========================================= */
-
-.error-actions {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 0.8rem;
-
-}
-
-
-.error-primary-button,
-.error-secondary-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 0.5rem;
-
-    padding:
-        0.75rem 1.1rem;
-
-    border-radius: 10px;
-
-    font-size: 0.8rem;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        border-color 0.3s ease;
-
-}
-
-
-.error-primary-button {
-
-    background:
-        var(--primary-color);
-
-    color: #ffffff;
-
-}
-
-
-.error-primary-button:hover {
-
-    background:
-        var(--primary-hover);
-
-    color: #ffffff;
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.error-secondary-button {
-
-    border:
-        1px solid
-        var(--border-color);
-
-    background:
-        var(--bg-secondary);
-
-    color:
-        var(--text-secondary);
-
-}
-
-
-.error-secondary-button:hover {
-
-    border-color:
-        var(--primary-color);
-
-    color:
-        var(--text-primary);
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-/* =========================================
-   Spider-Man Web
-========================================= */
-
-.error-web {
-
-    position: absolute;
-
-    width: 500px;
-
-    height: 500px;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-
-    opacity: 0.5;
-
-}
-
-
-.error-web::before,
-.error-web::after,
-.error-web span {
-
-    position: absolute;
-
-    content: "";
-
-    top: 50%;
-
-    left: 50%;
-
-    width: 100%;
-
-    height: 100%;
-
-    border:
-        1px solid
-        rgba(
-            225,
-            6,
-            0,
-            0.08
-        );
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-}
-
-
-.error-web::before {
-
-    width: 100%;
-
-    height: 100%;
-
-}
-
-
-.error-web::after {
-
-    width: 75%;
-
-    height: 75%;
-
-    border-color:
-        rgba(
-            51,
-            153,
-            255,
-            0.08
-        );
-
-}
-
-
-.error-web span:nth-child(1) {
-
-    width: 50%;
-
-    height: 50%;
-
-}
-
-
-.error-web span:nth-child(2) {
-
-    width: 25%;
-
-    height: 25%;
-
-    border-color:
-        rgba(
-            225,
-            6,
-            0,
-            0.1
-        );
-
-}
-
-
-.error-web span:nth-child(3) {
-
-    width: 10%;
-
-    height: 10%;
-
-    border-color:
-        rgba(
-            51,
-            153,
-            255,
-            0.1
-        );
-
-}
-
-
-/* =========================================
-   404 Responsive
-========================================= */
-
-@media (max-width: 575px) {
-
-    .error-page {
-
-        min-height: 70vh;
-
-        padding:
-            4rem 1rem;
-
-    }
-
-
-    .error-number {
-
-        font-size:
-            8rem;
-
-    }
-
-
-    .error-actions {
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-    }
-
-
-    .error-primary-button,
-    .error-secondary-button {
-
-        justify-content: center;
-
-    }
-
-
-    .error-web {
-
-        width: 350px;
-
-        height: 350px;
-
-    }
-
-}
+           404 Error Page Styles
+        ========================================== */
+
+        /* =========================================
+           Error Page
+        ========================================== */
+
+        .error-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+            background: #080b10;
+            overflow: hidden;
+        }
+
+        .error-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.02) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.02) 1px,
+                    transparent 1px
+                );
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* =========================================
+           Error Content
+        ========================================== */
+
+        .error-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* =========================================
+           Error Web Decoration
+        ========================================== */
+
+        .error-web {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            pointer-events: none;
+        }
+
+        .error-web span {
+            position: absolute;
+            border: 1px solid rgba(225, 6, 0, 0.15);
+            border-radius: 50%;
+        }
+
+        .error-web span:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 0;
+            right: 0;
+        }
+
+        .error-web span:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            right: 80px;
+            border-color: rgba(51, 153, 255, 0.1);
+        }
+
+        .error-web span:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 50px;
+            left: 100px;
+            border-color: rgba(16, 185, 129, 0.1);
+        }
+
+        /* =========================================
+           Error Number
+        ========================================== */
+
+        .error-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(225, 6, 0, 0.08);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* =========================================
+           Error Icon
+        ========================================== */
+
+        .error-icon {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: rgba(225, 6, 0, 0.15);
+            border: 2px solid rgba(225, 6, 0, 0.3);
+            color: #e10600;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           Error Label
+        ========================================== */
+
+        .error-label {
+            display: inline-block;
+            color: #e10600;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           Error Title
+        ========================================== */
+
+        .error-content h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           Error Description
+        ========================================== */
+
+        .error-content p {
+            color: #8491a5;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           Error Actions
+        ========================================== */
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-primary-button,
+        .error-secondary-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error-primary-button {
+            background: #e10600;
+            color: #ffffff;
+            border: 1px solid #e10600;
+        }
+
+        .error-primary-button:hover {
+            background: #ff1711;
+            border-color: #ff1711;
+            box-shadow: 0 12px 30px rgba(225, 6, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .error-secondary-button {
+            background: rgba(51, 153, 255, 0.1);
+            color: #3399ff;
+            border: 1px solid #3399ff;
+        }
+
+        .error-secondary-button:hover {
+            background: #3399ff;
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(51, 153, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .error-primary-button i,
+        .error-secondary-button i {
+            font-size: 1rem;
+        }
+
+        /* =========================================
+           Responsive
+        ========================================== */
+
+        @media (max-width: 767px) {
+
+            .error-page {
+                padding: 1.5rem 0;
+                min-height: auto;
+            }
+
+            .error-number {
+                font-size: 10rem;
+                top: 30%;
+            }
+
+            .error-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .error-content h1 {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .error-content p {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+
+            .error-actions {
+                gap: 0.75rem;
+            }
+
+            .error-primary-button,
+            .error-secondary-button {
+                padding: 0.7rem 1.4rem;
+                font-size: 0.9rem;
+                gap: 0.5rem;
+            }
+
+            .error-web {
+                top: -150px;
+                right: -150px;
+                width: 300px;
+                height: 300px;
+            }
+
+            .error-web span:nth-child(1) {
+                width: 200px;
+                height: 200px;
+            }
+
+            .error-web span:nth-child(2) {
+                width: 120px;
+                height: 120px;
+            }
+
+            .error-web span:nth-child(3) {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .error-page {
+                padding: 1rem 0;
+            }
+
+            .error-number {
+                font-size: 8rem;
+                top: 25%;
+                opacity: 0.5;
+            }
+
+            .error-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 1.7rem;
+                margin-bottom: 1rem;
+            }
+
+            .error-label {
+                font-size: 0.7rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .error-content h1 {
+                font-size: 1.5rem;
+                line-height: 1.2;
+                margin-bottom: 0.8rem;
+            }
+
+            .error-content p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .error-primary-button,
+            .error-secondary-button {
+                width: 100%;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                justify-content: center;
+            }
+
+            .error-web {
+                top: -200px;
+                right: -200px;
+                width: 250px;
+                height: 250px;
+            }
+
+            .error-web span:nth-child(1) {
+                width: 150px;
+                height: 150px;
+            }
+
+            .error-web span:nth-child(2) {
+                width: 100px;
+                height: 100px;
+            }
+
+            .error-web span:nth-child(3) {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .error-number {
+                font-size: 6rem;
+            }
+
+            .error-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5rem;
+            }
+
+            .error-content h1 {
+                font-size: 1.3rem;
+            }
+
+            .error-content p {
+                font-size: 0.85rem;
+            }
+
+            .error-primary-button,
+            .error-secondary-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .error-primary-button i,
+            .error-secondary-button i {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 
 </head>
 
-
 <body>
-
 
     <!-- =====================================
          Navbar
     ====================================== -->
 
-    <nav class="navbar navbar-expand-lg site-navbar">
+    <nav class="navbar navbar-expand-lg site-navbar sticky-top">
 
         <div class="container">
-
 
             <a
                 class="navbar-brand brand"
@@ -506,20 +492,14 @@
             >
 
                 <span class="brand-icon">
-
                     <i class="bi bi-book-half"></i>
-
                 </span>
 
-
                 <span class="brand-text">
-
                     Tech Glossary Hub
-
                 </span>
 
             </a>
-
 
             <button
                 class="navbar-toggler"
@@ -535,15 +515,12 @@
 
             </button>
 
-
             <div
                 class="collapse navbar-collapse"
                 id="mainNavigation"
             >
 
-                <ul
-                    class="navbar-nav ms-auto align-items-lg-center"
-                >
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
                     <li class="nav-item">
 
@@ -556,7 +533,6 @@
 
                     </li>
 
-
                     <li class="nav-item">
 
                         <a
@@ -567,7 +543,6 @@
                         </a>
 
                     </li>
-
 
                     <li class="nav-item">
 
@@ -580,7 +555,6 @@
 
                     </li>
 
-
                     <li class="nav-item">
 
                         <a
@@ -592,8 +566,18 @@
 
                     </li>
 
-                </ul>
+                    <li class="nav-item">
 
+                        <a
+                            class="nav-link"
+                            href="pages/other-versions.html"
+                        >
+                            Versions
+                        </a>
+
+                    </li>
+
+                </ul>
 
                 <button
                     class="theme-toggle"
@@ -613,7 +597,6 @@
 
     </nav>
 
-
     <!-- =====================================
          404 Content
     ====================================== -->
@@ -622,100 +605,71 @@
 
         <div class="container">
 
-
             <div class="error-content">
-
 
                 <div class="error-web">
 
                     <span></span>
-
                     <span></span>
-
                     <span></span>
 
                 </div>
-
 
                 <div class="error-number">
-
                     404
-
                 </div>
-
 
                 <div class="error-icon">
 
-                    <i
-                        class="bi bi-signpost-split"
-                    ></i>
+                    <i class="bi bi-signpost-split"></i>
 
                 </div>
 
-
                 <span class="error-label">
-
                     PAGE NOT FOUND
-
                 </span>
 
-
                 <h1>
-
                     Looks Like You Took
                     a Wrong Turn.
-
                 </h1>
 
-
                 <p>
-
                     The page you're looking for doesn't exist
                     or may have been moved somewhere else.
-
                 </p>
 
-
                 <div class="error-actions">
-
 
                     <a
                         href="index.html"
                         class="error-primary-button"
                     >
 
-                        <i
-                            class="bi bi-house"
-                        ></i>
+                        <i class="bi bi-house"></i>
 
                         Back to Home
 
                     </a>
-
 
                     <a
                         href="pages/glossary.html"
                         class="error-secondary-button"
                     >
 
-                        <i
-                            class="bi bi-book"
-                        ></i>
+                        <i class="bi bi-book"></i>
 
                         Browse Glossary
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
         </div>
 
     </main>
-
 
     <!-- =====================================
          Footer
@@ -731,7 +685,6 @@
                     © 2026 Tech Glossary Hub
                 </p>
 
-
                 <p>
                     Built with ❤️ for technology learners
                 </p>
@@ -742,19 +695,15 @@
 
     </footer>
 
-
     <!-- Bootstrap JS -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 
-
     <!-- Main Application -->
 
-    <script
-        src="js/app.js"
-    ></script>
+    <script src="js/app.js"></script>
 
 </body>
 

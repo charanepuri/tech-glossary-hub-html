@@ -12,24 +12,87 @@
 
     <meta
         name="description"
-        content="Tech Glossary Hub - Explore technology terms, definitions, syntax, and practical examples."
+        content="Tech Glossary Hub is a simple and interactive technology glossary featuring definitions, syntax and examples across web development, software engineering, data science, AI, cybersecurity, cloud and networking."
     >
 
     <meta
         name="author"
-        content="Charan Teja Epuri"
+        content="Epuri Charan Teja"
     >
 
-    <title>Tech Glossary Hub | Technology Knowledge Hub</title>
+    <meta
+        name="robots"
+        content="index, follow"
+    >
 
+    <meta
+        name="theme-color"
+        content="#0b0f14"
+    >
 
-    <!-- Bootstrap CSS -->
+    <meta
+        name="application-name"
+        content="Tech Glossary Hub"
+    >
+
+    <meta
+        name="color-scheme"
+        content="dark light"
+    >
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="assets/icons/tgh_html_logo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/icons/favicon.svg"
+    >
+
+    <link
+        rel="canonical"
+        href="https://charanepuri.github.io/tech-glossary-hub-html/"
+    >
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Tech Glossary Hub | Learn Technology Terms"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore technology terms with simple definitions, syntax and practical examples."
+    >
+
+    <meta
+        property="og:url"
+        content="https://charanepuri.github.io/tech-glossary-hub-html/"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Tech Glossary Hub"
+    >
+
+    <title>
+        Tech Glossary Hub | Learn Technology Terms
+    </title>
+
+    <!-- Bootstrap -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
 
     <!-- Bootstrap Icons -->
 
@@ -38,8 +101,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     >
 
-
-    <!-- Custom CSS -->
+    <!-- Main CSS -->
 
     <link
         rel="stylesheet"
@@ -48,9 +110,7 @@
 
 </head>
 
-
 <body>
-
 
     <!-- =====================================
          Navbar
@@ -63,7 +123,6 @@
 
         <div class="container">
 
-
             <!-- Brand -->
 
             <a
@@ -72,20 +131,14 @@
             >
 
                 <span class="brand-icon">
-
                     <i class="bi bi-book-half"></i>
-
                 </span>
 
-
                 <span class="brand-text">
-
                     Tech Glossary Hub
-
                 </span>
 
             </a>
-
 
             <!-- Mobile Toggle -->
 
@@ -103,7 +156,6 @@
 
             </button>
 
-
             <!-- Navigation -->
 
             <div
@@ -112,7 +164,6 @@
             >
 
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-
 
                     <li class="nav-item">
 
@@ -125,7 +176,6 @@
 
                     </li>
 
-
                     <li class="nav-item">
 
                         <a
@@ -136,7 +186,6 @@
                         </a>
 
                     </li>
-
 
                     <li class="nav-item">
 
@@ -149,7 +198,6 @@
 
                     </li>
 
-
                     <li class="nav-item">
 
                         <a
@@ -161,8 +209,18 @@
 
                     </li>
 
-                </ul>
+                    <li class="nav-item">
 
+                        <a
+                            class="nav-link"
+                            href="pages/other-versions.html"
+                        >
+                            Versions
+                        </a>
+
+                    </li>
+
+                </ul>
 
                 <!-- Theme Toggle -->
 
@@ -184,13 +242,11 @@
 
     </nav>
 
-
     <!-- =====================================
          Main Content
     ====================================== -->
 
     <main>
-
 
         <!-- =====================================
              Hero Section
@@ -198,33 +254,22 @@
 
         <section class="hero-section">
 
-
             <div class="hero-web web-one"></div>
-
             <div class="hero-web web-two"></div>
-
             <div class="hero-web web-three"></div>
-
 
             <div class="container position-relative">
 
-
                 <div class="row align-items-center">
-
 
                     <!-- Hero Content -->
 
                     <div class="col-lg-7">
 
-
                         <span class="hero-badge">
-
                             <i class="bi bi-code-slash"></i>
-
                             Developer Knowledge Hub
-
                         </span>
-
 
                         <h1 class="hero-title">
 
@@ -238,16 +283,12 @@
 
                         </h1>
 
-
                         <p class="hero-description">
-
                             Explore technology concepts across web
                             development, software engineering, artificial
                             intelligence, cybersecurity, cloud computing,
                             and networking.
-
                         </p>
-
 
                         <!-- Search -->
 
@@ -255,13 +296,9 @@
 
                             <div class="input-group">
 
-
                                 <span class="input-group-text">
-
                                     <i class="bi bi-search"></i>
-
                                 </span>
-
 
                                 <input
                                     type="search"
@@ -271,133 +308,92 @@
                                     aria-label="Search technology terms"
                                 >
 
-
                                 <button
                                     class="btn btn-primary"
                                     id="searchButton"
                                     type="button"
                                 >
-
                                     Search
-
                                 </button>
-
 
                             </div>
 
                         </div>
-
 
                         <!-- Hero Actions -->
 
                         <div class="hero-actions">
 
-
                             <a
                                 href="#categories"
                                 class="btn btn-primary btn-lg"
                             >
-
                                 Explore Categories
-
                                 <i class="bi bi-arrow-down ms-2"></i>
-
                             </a>
-
 
                             <a
                                 href="pages/glossary.html"
                                 class="btn btn-outline-secondary btn-lg"
                             >
-
                                 Browse Glossary
-
                                 <i class="bi bi-book ms-2"></i>
-
                             </a>
-
 
                         </div>
 
                     </div>
-
 
                     <!-- Hero Visual -->
 
                     <div class="col-lg-5">
 
-
                         <div class="hero-visual">
 
-
                             <div class="spider-emblem">
-
                                 <i class="bi bi-code-slash"></i>
-
                             </div>
 
-
                             <div class="orbit orbit-one"></div>
-
                             <div class="orbit orbit-two"></div>
 
-
                             <div class="floating-card card-top">
-
                                 <i class="bi bi-filetype-html"></i>
-
                                 <span>
                                     HTML
                                 </span>
-
                             </div>
 
-
                             <div class="floating-card card-right">
-
                                 <i class="bi bi-braces"></i>
-
                                 <span>
                                     JavaScript
                                 </span>
-
                             </div>
 
-
                             <div class="floating-card card-bottom">
-
                                 <i class="bi bi-robot"></i>
-
                                 <span>
                                     AI
                                 </span>
-
                             </div>
 
-
                             <div class="floating-card card-left">
-
                                 <i class="bi bi-cloud"></i>
-
                                 <span>
                                     Cloud
                                 </span>
-
                             </div>
-
 
                         </div>
 
                     </div>
 
-
                 </div>
-
 
                 <!-- Statistics -->
 
                 <div class="hero-stats-row">
-
 
                     <div class="hero-stat">
 
@@ -411,7 +407,6 @@
 
                     </div>
 
-
                     <div class="hero-stat">
 
                         <strong id="totalTerms">
@@ -423,7 +418,6 @@
                         </span>
 
                     </div>
-
 
                     <div class="hero-stat">
 
@@ -437,7 +431,6 @@
 
                     </div>
 
-
                     <div class="hero-stat">
 
                         <strong>
@@ -450,13 +443,11 @@
 
                     </div>
 
-
                 </div>
 
             </div>
 
         </section>
-
 
         <!-- =====================================
              Categories Section
@@ -469,47 +460,38 @@
 
             <div class="container">
 
-
                 <div class="section-heading text-center">
-
 
                     <span>
                         EXPLORE THE HUB
                     </span>
 
-
                     <h2>
                         Technology Categories
                     </h2>
-
 
                     <p>
                         Pick a domain and start exploring important
                         technology concepts.
                     </p>
 
-
                 </div>
-
 
                 <div
                     class="row g-4"
                     id="categoryContainer"
                 >
 
-
                     <!--
                         Categories are generated
                         dynamically using JavaScript.
                     -->
-
 
                 </div>
 
             </div>
 
         </section>
-
 
         <!-- =====================================
              Featured Terms
@@ -522,28 +504,22 @@
 
             <div class="container">
 
-
                 <div class="section-heading text-center">
-
 
                     <span>
                         GLOSSARY
                     </span>
 
-
                     <h2>
                         Start With The Basics
                     </h2>
-
 
                     <p>
                         Get familiar with some of the most important
                         concepts in technology.
                     </p>
 
-
                 </div>
-
 
                 <div
                     class="row g-4"
@@ -557,28 +533,21 @@
 
                 </div>
 
-
                 <div class="text-center mt-5">
-
 
                     <a
                         href="pages/glossary.html"
                         class="btn btn-primary btn-lg"
                     >
-
                         Explore Full Glossary
-
                         <i class="bi bi-arrow-right ms-2"></i>
-
                     </a>
-
 
                 </div>
 
             </div>
 
         </section>
-
 
         <!-- =====================================
              CTA
@@ -586,62 +555,41 @@
 
         <section class="cta-section">
 
-
             <div class="container">
 
-
                 <div class="cta-card">
-
 
                     <div class="cta-web">
 
                         <span></span>
-
                         <span></span>
-
                         <span></span>
 
                     </div>
 
-
                     <div class="position-relative">
 
-
                         <span class="cta-badge">
-
                             <i class="bi bi-lightning-fill"></i>
-
                             KEEP LEARNING
-
                         </span>
 
-
                         <h2>
-
                             Build Your Technology Knowledge.
-
                         </h2>
 
-
                         <p>
-
                             Explore concepts, understand the fundamentals,
                             and strengthen your developer knowledge.
-
                         </p>
-
 
                         <a
                             href="pages/glossary.html"
                             class="btn btn-light btn-lg"
                         >
-
                             Explore Glossary
-
                             <i class="bi bi-arrow-right ms-2"></i>
-
                         </a>
-
 
                     </div>
 
@@ -651,397 +599,317 @@
 
         </section>
 
-
     </main>
 
+    <!-- =========================================
+         Footer
+    ========================================== -->
 
-<!-- =========================================
-     Footer
-========================================== -->
+    <footer class="site-footer">
 
-<footer class="site-footer">
+        <div class="container">
 
-    <div class="container">
+            <!-- =====================================
+                 Project Header
+            ====================================== -->
 
+            <div class="footer-project-header">
 
-        <!-- =====================================
-             Project Header
-        ====================================== -->
+                <h2>
+                    <span>Tech</span> Glossary Hub
+                </h2>
 
-        <div class="footer-project-header">
+                <p class="footer-project-tagline">
+                    Your simple and interactive guide to
+                    modern technology concepts.
+                </p>
 
-            <h2>
+            </div>
 
-                <span>Tech</span> Glossary Hub
+            <!-- =====================================
+                 Footer Main
+            ====================================== -->
 
-            </h2>
+            <div class="footer-main">
 
+                <div class="row g-5">
 
-            <p class="footer-project-tagline">
+                    <!-- =================================
+                         About
+                    ================================== -->
 
-                Your simple and interactive guide to
-                modern technology concepts.
+                    <div class="col-lg-3 col-md-6">
 
-            </p>
+                        <div class="footer-column">
 
-        </div>
+                            <h5>
+                                About
+                            </h5>
 
+                            <p class="footer-copyright">
+                                © 2026 Built by
+                                Epuri Charan Teja
+                            </p>
 
-        <!-- =====================================
-             Footer Main
-        ====================================== -->
+                            <p class="footer-about-text">
+                                Tech Glossary Hub is an
+                                educational project designed
+                                to make technology terminology
+                                easier to understand.
+                            </p>
 
-        <div class="footer-main">
+                            <p class="footer-built-with">
+                                Developed using
+                                <strong>
+                                    HTML5, CSS3, JavaScript
+                                    &amp; Bootstrap
+                                </strong>
+                            </p>
 
-            <div class="row g-5">
-
-
-                <!-- =================================
-                     About
-                ================================== -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <div class="footer-column">
-
-                        <h5>
-                            About
-                        </h5>
-
-
-                        <p class="footer-copyright">
-
-                            © 2026 Built by
-                            Epuri Charan Teja
-
-                        </p>
-
-
-                        <p class="footer-about-text">
-
-                            Tech Glossary Hub is an
-                            educational project designed
-                            to make technology terminology
-                            easier to understand.
-
-                        </p>
-
-
-                        <p class="footer-built-with">
-
-                            Developed using
-
-                            <strong>
-                                HTML5, CSS3, JavaScript
-                                & Bootstrap
-                            </strong>
-
-                        </p>
+                        </div>
 
                     </div>
 
-                </div>
+                    <!-- =================================
+                         Project
+                    ================================== -->
 
+                    <div class="col-lg-3 col-md-6">
 
-                <!-- =================================
-                     Project
-                ================================== -->
+                        <div class="footer-column">
 
-                <div class="col-lg-3 col-md-6">
+                            <h5>
+                                Project
+                            </h5>
 
-                    <div class="footer-column">
+                            <ul class="footer-links">
 
-                        <h5>
-                            Project
-                        </h5>
+                                <li>
 
+                                    <a
+                                        href="https://charanepuri.github.io/tech-glossary-hub-html/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
 
-                        <ul class="footer-links">
+                                        <i class="bi bi-globe2"></i>
 
+                                        Live Project
 
-                            <li>
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a
+                                        href="https://github.com/charanepuri/tech-glossary-hub-html"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+
+                                        <i class="bi bi-github"></i>
+
+                                        GitHub Repository
+
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a href="#">
+
+                                        <i class="bi bi-file-earmark-text"></i>
+
+                                        Documentation
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =================================
+                         Connect + Explore Portfolios
+                    ================================== -->
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="footer-column">
+
+                            <h5>
+                                Connect
+                            </h5>
+
+                            <div class="footer-social-links">
 
                                 <a
-                                    href="https://charanepuri.github.io/tech-glossary-hub-html/"
+                                    class="footer-social-link"
+                                    href="https://github.com/charanepuri"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
 
-                                    <i
-                                        class="bi bi-globe2"
-                                    ></i>
+                                    <i class="bi bi-github"></i>
 
-                                    Live Project
+                                    GitHub
 
                                 </a>
 
-                            </li>
-
-
-                            <li>
-
                                 <a
-                                    href="https://github.com/charanepuri/tech-glossary-hub-html"
+                                    class="footer-social-link"
+                                    href="https://www.linkedin.com/in/charan-teja-972aa9231"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
 
-                                    <i
-                                        class="bi bi-github"
-                                    ></i>
+                                    <i class="bi bi-linkedin"></i>
 
-                                    GitHub Repository
+                                    LinkedIn
 
                                 </a>
 
-                            </li>
+                            </div>
 
+                            <h5>
+                                Explore Portfolios
+                            </h5>
 
-                            <li>
+                            <div class="footer-portfolio">
 
                                 <a
-                                    href="#"
+                                    href="https://portfolio-site-django.onrender.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-
-                                    <i
-                                        class="bi bi-file-earmark-text"
-                                    ></i>
-
-                                    Documentation
-
+                                    Django
                                 </a>
 
-                            </li>
+                                <a
+                                    href="https://charan-react-portfolio.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    React
+                                </a>
 
+                                <a
+                                    href="https://flask-developer-dashboard-portfolio.onrender.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Flask
+                                </a>
 
-                        </ul>
+                                <a
+                                    href="https://angular-portfolio-sigma-eight.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Angular
+                                </a>
 
-                    </div>
+                                <a
+                                    href="https://profile-card-angular.vercel.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Profile Card
+                                </a>
 
-                </div>
-
-
-                <!-- =================================
-                     Connect + Explore Portfolios
-                ================================== -->
-
-                <div class="col-lg-3 col-md-6">
-
-                    <div class="footer-column">
-
-                        <h5>
-                            Connect
-                        </h5>
-
-
-                        <div class="footer-social-links">
-
-
-                            <a
-                                class="footer-social-link"
-                                href="https://github.com/charanepuri"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-
-                                <i
-                                    class="bi bi-github"
-                                ></i>
-
-                                GitHub
-
-                            </a>
-
-
-                            <a
-                                class="footer-social-link"
-                                href="https://www.linkedin.com/in/charan-teja-972aa9231"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-
-                                <i
-                                    class="bi bi-linkedin"
-                                ></i>
-
-                                LinkedIn
-
-                            </a>
-
-
-                        </div>
-
-
-                        <h5>
-                            Explore Portfolios
-                        </h5>
-
-
-                        <div class="footer-portfolio">
-
-
-                            <a
-                                href="https://portfolio-site-django.onrender.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Django
-                            </a>
-
-
-                            <a
-                                href="https://charan-react-portfolio.vercel.app"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                React
-                            </a>
-
-
-                            <a
-                                href="https://flask-developer-dashboard-portfolio.onrender.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Flask
-                            </a>
-
-
-                            <a
-                                href="https://angular-portfolio-sigma-eight.vercel.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Angular
-                            </a>
-
-
-                            <a
-                                href="https://profile-card-angular.vercel.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Profile Card
-                            </a>
-
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <!-- =================================
+                         Quick Links
+                    ================================== -->
 
+                    <div class="col-lg-3 col-md-6">
 
-                <!-- =================================
-                     Quick Links
-                ================================== -->
+                        <div class="footer-column">
 
-                <div class="col-lg-3 col-md-6">
+                            <h5>
+                                Quick Links
+                            </h5>
 
-                    <div class="footer-column">
+                            <ul class="footer-links">
 
-                        <h5>
-                            Quick Links
-                        </h5>
+                                <li>
 
+                                    <a href="index.html">
 
-                        <ul class="footer-links">
+                                        <i class="bi bi-chevron-right"></i>
 
+                                        Home
 
-                            <li>
+                                    </a>
 
-                                <a href="index.html">
+                                </li>
 
-                                    <i
-                                        class="bi bi-chevron-right"
-                                    ></i>
+                                <li>
 
-                                    Home
+                                    <a href="pages/categories.html">
 
-                                </a>
+                                        <i class="bi bi-chevron-right"></i>
 
-                            </li>
+                                        Categories
 
+                                    </a>
 
-                            <li>
+                                </li>
+
+                                <li>
+
+                                    <a href="pages/glossary.html">
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                        Glossary
+
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a href="pages/about.html">
+
+                                        <i class="bi bi-chevron-right"></i>
+
+                                        About
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                            <h5 class="mt-4">
+                                Explore Other Versions
+                            </h5>
+
+                            <div class="footer-project-links">
 
                                 <a
-                                    href="pages/categories.html"
+                                    class="footer-project-link"
+                                    href="../pages/other-versions.html"
                                 >
 
-                                    <i
-                                        class="bi bi-chevron-right"
-                                    ></i>
+                                    <i class="bi bi-code-slash"></i>
 
-                                    Categories
+                                    View All Versions
 
                                 </a>
 
-                            </li>
-
-
-                            <li>
-
-                                <a
-                                    href="pages/glossary.html"
-                                >
-
-                                    <i
-                                        class="bi bi-chevron-right"
-                                    ></i>
-
-                                    Glossary
-
-                                </a>
-
-                            </li>
-
-
-                            <li>
-
-                                <a
-                                    href="pages/about.html"
-                                >
-
-                                    <i
-                                        class="bi bi-chevron-right"
-                                    ></i>
-
-                                    About
-
-                                </a>
-
-                            </li>
-
-
-                        </ul>
-
-
-                        <h5
-                            class="mt-4"
-                        >
-                            Explore Other Versions
-                        </h5>
-
-
-                        <div
-                            class="footer-project-links"
-                        >
-
-
-                            <a
-                                class="footer-project-link"
-                                href="../pages/other-versions.html"
-                            >
-
-                                <i
-                                    class="bi bi-code-slash"
-                                ></i>
-
-                                View All Versions
-
-                            </a>
-
+                            </div>
 
                         </div>
 
@@ -1049,43 +917,37 @@
 
                 </div>
 
+            </div>
+
+            <!-- =====================================
+                 Divider
+            ====================================== -->
+
+            <hr class="footer-divider">
+
+            <!-- =====================================
+                 Footer Bottom
+            ====================================== -->
+
+            <div class="footer-bottom">
+
+                <p class="footer-made-with">
+
+                    Made with
+                    <span class="heart">💕</span>
+                    by
+
+                    <strong>
+                        Epuri Charan Teja
+                    </strong>
+
+                </p>
 
             </div>
 
         </div>
 
-
-        <!-- =====================================
-             Divider
-        ====================================== -->
-
-        <hr class="footer-divider">
-
-
-        <!-- =====================================
-             Footer Bottom
-        ====================================== -->
-
-        <div class="footer-bottom">
-
-            <p class="footer-made-with">
-
-                Made with
-                <span class="heart">💕</span>
-                by
-                <strong>
-                    Epuri Charan Teja
-                </strong>
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</footer>
-
+    </footer>
 
     <!-- =====================================
          Bootstrap JavaScript
@@ -1095,20 +957,17 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 
-
     <!-- =====================================
          Project Data
     ====================================== -->
 
     <script src="data/glossary-data.js"></script>
 
-
     <!-- =====================================
          Application JavaScript
     ====================================== -->
 
     <script src="js/app.js"></script>
-
 
 </body>
 
